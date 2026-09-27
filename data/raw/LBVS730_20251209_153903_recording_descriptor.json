@@ -1,0 +1,6808 @@
+{
+  "sensors": {
+    "AD": [
+      {
+        "model": "AD",
+        "position": "FC",
+        "serial": "H30S1A-H01090794",
+        "streams": [
+          "LBVS730_20251209_153903_AD_FC.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 3840,
+              "ImageHeight": 2160,
+              "Model": "",
+              "fx": 7345.1686840199,
+              "fy": 7346.1423364661,
+              "cx": 1879.5627682962,
+              "cy": 1065.602178257,
+              "pinhole_k1": -10.4308075354,
+              "pinhole_k2": -15.1551861016,
+              "pinhole_p1": -0.0001266429,
+              "pinhole_p2": 0.0002685002,
+              "pinhole_k3": 1.4681264557,
+              "pinhole_k4": -10.237222543,
+              "pinhole_k5": -17.0280943465,
+              "pinhole_k6": -3.2364043684,
+              "fisheye_k1": 0,
+              "fisheye_k2": 0,
+              "fisheye_k3": 0,
+              "fisheye_k4": 0,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "top_left",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 3840,
+              "height_px": 2160,
+              "cx_px": 1879.5627682962,
+              "cy_px": 1065.602178257
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2024.04.24 00:00:00.00",
+              "model": "ISO",
+              "rot_00": -0.008236,
+              "rot_01": 0.00221,
+              "rot_02": 0.999964,
+              "rot_10": -0.99993,
+              "rot_11": 0.008531,
+              "rot_12": -0.008255,
+              "rot_20": -0.008549,
+              "rot_21": -0.999961,
+              "rot_22": 0.002139,
+              "trans_0_m": 1.712443,
+              "trans_1_m": -0.065453,
+              "trans_2_m": 1.528976,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "AD2",
+            "Version": "v4.0.1"
+          }
+        }
+      },
+      {
+        "model": "AD",
+        "position": "FR",
+        "serial": "H110SA-G04190539",
+        "streams": [
+          "LBVS730_20251209_153903_AD_FR.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 2880,
+              "ImageHeight": 1860,
+              "Model": "",
+              "fx": 1417.8436732906,
+              "fy": 1417.9874682491,
+              "cx": 1438.5375316799,
+              "cy": 928.5466777639,
+              "pinhole_k1": 1.7888865537,
+              "pinhole_k2": 0.3709830945,
+              "pinhole_p1": 9.11322e-05,
+              "pinhole_p2": -0.0001101261,
+              "pinhole_k3": -0.0029548147,
+              "pinhole_k4": 2.1013781172,
+              "pinhole_k5": 0.8310460928,
+              "pinhole_k6": 0.0259761349,
+              "fisheye_k1": 0,
+              "fisheye_k2": 0,
+              "fisheye_k3": 0,
+              "fisheye_k4": 0,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "top_left",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 2880,
+              "height_px": 1860,
+              "cx_px": 1438.5375316799,
+              "cy_px": 928.5466777639
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2024.04.24 00:00:00.00",
+              "model": "ISO",
+              "rot_00": -0.87735,
+              "rot_01": -0.000675,
+              "rot_02": 0.479851,
+              "rot_10": -0.479682,
+              "rot_11": -0.025374,
+              "rot_12": -0.877076,
+              "rot_20": 0.012768,
+              "rot_21": -0.999678,
+              "rot_22": 0.021938,
+              "trans_0_m": 1.721603,
+              "trans_1_m": -0.564791,
+              "trans_2_m": 1.521668,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "AD2",
+            "Version": "v4.0.1"
+          }
+        }
+      },
+      {
+        "model": "AD",
+        "position": "RR",
+        "serial": "H60S-H01090553",
+        "streams": [
+          "LBVS730_20251209_153903_AD_RR.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 2880,
+              "ImageHeight": 1860,
+              "Model": "",
+              "fx": 2625.6223004409,
+              "fy": 2625.6213039595,
+              "cx": 1490.6742783676,
+              "cy": 965.3000504743,
+              "pinhole_k1": 1.1836223538,
+              "pinhole_k2": 24.6870427713,
+              "pinhole_p1": 0.0001263138,
+              "pinhole_p2": -0.001423013,
+              "pinhole_k3": 5.9956475321,
+              "pinhole_k4": 1.5237459763,
+              "pinhole_k5": 25.0938721442,
+              "pinhole_k6": 17.5056475953,
+              "fisheye_k1": 0,
+              "fisheye_k2": 0,
+              "fisheye_k3": 0,
+              "fisheye_k4": 0,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "top_left",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 2880,
+              "height_px": 1860,
+              "cx_px": 1490.6742783676,
+              "cy_px": 965.3000504743
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2024.04.24 00:00:00.00",
+              "model": "ISO",
+              "rot_00": -0.525398,
+              "rot_01": 0.013392,
+              "rot_02": -0.850751,
+              "rot_10": 0.850212,
+              "rot_11": -0.030651,
+              "rot_12": -0.525548,
+              "rot_20": -0.033114,
+              "rot_21": -0.99944,
+              "rot_22": 0.004718,
+              "trans_0_m": 1.584381,
+              "trans_1_m": -0.573592,
+              "trans_2_m": 1.520394,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "AD2",
+            "Version": "v4.0.1"
+          }
+        }
+      },
+      {
+        "model": "AD",
+        "position": "FT",
+        "serial": "H120YA-G12101339",
+        "streams": [
+          "LBVS730_20251209_153903_AD_FT.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 3840,
+              "ImageHeight": 2160,
+              "Model": "",
+              "fx": 1911.2580234295,
+              "fy": 1911.1785908415,
+              "cx": 1920.0811985668,
+              "cy": 1083.7385312411,
+              "pinhole_k1": 1.695322676,
+              "pinhole_k2": 0.4490802638,
+              "pinhole_p1": 3.53529e-05,
+              "pinhole_p2": -4.19073e-05,
+              "pinhole_k3": 0.0098821005,
+              "pinhole_k4": 2.0603303005,
+              "pinhole_k5": 0.9650276479,
+              "pinhole_k6": 0.0745938612,
+              "fisheye_k1": 0,
+              "fisheye_k2": 0,
+              "fisheye_k3": 0,
+              "fisheye_k4": 0,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "top_left",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 3840,
+              "height_px": 2160,
+              "cx_px": 1920.0811985668,
+              "cy_px": 1083.7385312411
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2024.04.24 00:00:00.00",
+              "model": "ISO",
+              "rot_00": 0.000742,
+              "rot_01": -0.00348,
+              "rot_02": 0.999994,
+              "rot_10": -0.999999,
+              "rot_11": 0.000674,
+              "rot_12": 0.000744,
+              "rot_20": -0.000677,
+              "rot_21": -0.999994,
+              "rot_22": -0.003479,
+              "trans_0_m": 1.772504,
+              "trans_1_m": 0.081083,
+              "trans_2_m": 1.533558,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "AD1",
+            "Version": "v4.0.1"
+          }
+        }
+      },
+      {
+        "model": "AD",
+        "position": "RC",
+        "serial": "H60S-H01090546",
+        "streams": [
+          "LBVS730_20251209_153903_AD_RC.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 2880,
+              "ImageHeight": 1860,
+              "Model": "",
+              "fx": 2629.1020302414,
+              "fy": 2629.4115842404,
+              "cx": 1404.2427619512,
+              "cy": 898.9492892065,
+              "pinhole_k1": -0.6656380896,
+              "pinhole_k2": 15.4340030648,
+              "pinhole_p1": 0.0010821761,
+              "pinhole_p2": -0.0001831212,
+              "pinhole_k3": 2.2280316876,
+              "pinhole_k4": -0.3334028271,
+              "pinhole_k5": 15.4066745601,
+              "pinhole_k6": 8.67295158,
+              "fisheye_k1": 0,
+              "fisheye_k2": 0,
+              "fisheye_k3": 0,
+              "fisheye_k4": 0,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "top_left",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 2880,
+              "height_px": 1860,
+              "cx_px": 1404.2427619512,
+              "cy_px": 898.9492892065
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2024.04.24 00:00:00.00",
+              "model": "ISO",
+              "rot_00": -0.00636,
+              "rot_01": -0.015369,
+              "rot_02": -0.999862,
+              "rot_10": 0.999964,
+              "rot_11": -0.005796,
+              "rot_12": -0.006272,
+              "rot_20": -0.005699,
+              "rot_21": -0.999865,
+              "rot_22": 0.015405,
+              "trans_0_m": -0.092092,
+              "trans_1_m": -0.00415,
+              "trans_2_m": 1.533747,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "AD1",
+            "Version": "v4.0.1"
+          }
+        }
+      },
+      {
+        "model": "AD",
+        "position": "RL",
+        "serial": "H60S-H01090552",
+        "streams": [
+          "LBVS730_20251209_153903_AD_RL.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 2880,
+              "ImageHeight": 1860,
+              "Model": "",
+              "fx": 2624.8159709402,
+              "fy": 2624.6334778154,
+              "cx": 1405.3835465697,
+              "cy": 908.2539847364,
+              "pinhole_k1": -0.4841544479,
+              "pinhole_k2": 18.1489597662,
+              "pinhole_p1": 0.0007871591,
+              "pinhole_p2": -2.03101e-05,
+              "pinhole_k3": 3.4774130339,
+              "pinhole_k4": -0.1505587887,
+              "pinhole_k5": 18.0912551064,
+              "pinhole_k6": 11.3787846608,
+              "fisheye_k1": 0,
+              "fisheye_k2": 0,
+              "fisheye_k3": 0,
+              "fisheye_k4": 0,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "top_left",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 2880,
+              "height_px": 1860,
+              "cx_px": 1405.3835465697,
+              "cy_px": 908.2539847364
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2024.04.24 00:00:00.00",
+              "model": "ISO",
+              "rot_00": 0.518675,
+              "rot_01": 0.006361,
+              "rot_02": -0.854948,
+              "rot_10": 0.854872,
+              "rot_11": 0.011367,
+              "rot_12": 0.518714,
+              "rot_20": 0.013018,
+              "rot_21": -0.999915,
+              "rot_22": 0.000458,
+              "trans_0_m": 1.573179,
+              "trans_1_m": 0.573533,
+              "trans_2_m": 1.525047,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "AD1",
+            "Version": "v4.0.1"
+          }
+        }
+      },
+      {
+        "model": "AD",
+        "position": "FL",
+        "serial": "H110SA-G04190537",
+        "streams": [
+          "LBVS730_20251209_153903_AD_FL.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 2880,
+              "ImageHeight": 1860,
+              "Model": "",
+              "fx": 1422.1119401452,
+              "fy": 1422.3160717574,
+              "cx": 1439.6448374595,
+              "cy": 930.1237123774,
+              "pinhole_k1": 4.7254904218,
+              "pinhole_k2": 2.1630907789,
+              "pinhole_p1": -0.000218772,
+              "pinhole_p2": 0.0001091659,
+              "pinhole_k3": 0.089390038,
+              "pinhole_k4": 5.0380765334,
+              "pinhole_k5": 3.5283962786,
+              "pinhole_k6": 0.4341663658,
+              "fisheye_k1": 0,
+              "fisheye_k2": 0,
+              "fisheye_k3": 0,
+              "fisheye_k4": 0,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "top_left",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 2880,
+              "height_px": 1860,
+              "cx_px": 1439.6448374595,
+              "cy_px": 930.1237123774
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2024.04.24 00:00:00.00",
+              "model": "ISO",
+              "rot_00": 0.877312,
+              "rot_01": 0.004155,
+              "rot_02": 0.479902,
+              "rot_10": -0.479898,
+              "rot_11": 0.017253,
+              "rot_12": 0.877155,
+              "rot_20": -0.004635,
+              "rot_21": -0.999843,
+              "rot_22": 0.01713,
+              "trans_0_m": 1.7101,
+              "trans_1_m": 0.556696,
+              "trans_2_m": 1.517109,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "AD1",
+            "Version": "v4.0.1"
+          }
+        }
+      }
+    ],
+    "CAN": [
+      {
+        "model": "CAN",
+        "position": "VCAN",
+        "serial": "NA",
+        "streams": [
+          "LBVS730_20251209_153903_CAN_VCAN.bin"
+        ],
+        "attributes": {
+          "CAN_type": "CAN",
+          "plugin": {
+            "Name": "VEHICLEBUS",
+            "Version": "v3.0.2"
+          }
+        }
+      }
+    ],
+    "GTLDR": [
+      {
+        "model": "PandarQT",
+        "position": "LS",
+        "serial": "QT3DC857923DC954",
+        "streams": [
+          "LBVS730_20251209_153903_GTLDR_LS.bin"
+        ],
+        "attributes": {
+          "device_info": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "SN": "QT3DC857923DC954",
+              "Mac": "EC:9F:0D:00:DD:9E",
+              "SW_Ver": "2.0.18",
+              "HW_Ver": "2.2.0",
+              "FW_Ver": "2.0.20",
+              "Model": "Pandar_ZYNQ",
+              "AngleOffset": "29819",
+              "CalibSize": "0",
+              "FPGA_Ver": "",
+              "LidarCalibSize": "1187",
+              "Up_Fpga_Ver": "2.0.13",
+              "Udp_Seq": "1",
+              "ProdDate": "2022-11-10",
+              "ProdName": "PandarQT",
+              "LidarDataFormat": "1",
+              "Trigger_Method": "1",
+              "LaserNum": "64",
+              "Firing_Method": "",
+              "AccAnglePhase": "0",
+              "AccAnglePeak": "0",
+              "AccAngleEnable": "0",
+              "MotorType": "1",
+              "LargeCodeRange": "1"
+            }
+          },
+          "ethernet_all": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "Control_IP": {
+                "IPv4": "192.168.11.201",
+                "Mask": "255.255.255.0",
+                "Gateway": "192.168.11.101",
+                "DHCP": 0,
+                "VlanFlag": 0,
+                "VlanID": 1
+              },
+              "Stream_IP": {
+                "IPv4": "172.31.3.44"
+              }
+            }
+          },
+          "lidar_config": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "SpinSpeed": "2",
+              "DestIp": "255.255.255.255",
+              "DestPort": "2369",
+              "GPS": "0",
+              "GPS_GPRMC": "0",
+              "FPGA_DOWN_VER": "2.0.20",
+              "ClockSource": "1",
+              "PTPStatus": "Locked (offset: 16 ns)",
+              "PTPConfig": "{\"Domain\":0,\"Network\":0,\"LogAnnounceInterval\":1,\"LogSyncInterval\":1,\"LogMinDelayReqInterval\":0}",
+              "RotateDirection": "0",
+              "NoiseFiltering": "0",
+              "ReflectivityMapping": "0",
+              "GpsPort": "10110",
+              "ClockDataFormat": "0",
+              "gPTPConfig": "{\"Domain\":0,\"Network\":1,\"LogAnnounceInterval\":0,\"LogSyncInterval\":-3,\"LogMinDelayReqInterval\":0}",
+              "PTPProfile": "1",
+              "gPTPConfig_avnu": "{\"Domain\":0,\"Network\":1,\"LogAnnounceInterval\":0,\"LogSyncInterval\":-3,\"LogMinDelayReqInterval\":0}",
+              "RetroMultiReflection": "0"
+            }
+          },
+          "lidar_sync": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "sync": "0",
+              "syncAngle": "0"
+            }
+          },
+          "TimeStatistic": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "StartupTimes": "1189",
+              "CurrentTemp": "32.85",
+              "TotalWorkingTime": "104422",
+              "SystemUptime": "35",
+              "Time0": "0",
+              "Time1": "0",
+              "Time2": "12",
+              "Time3": "7091",
+              "Time4": "40845",
+              "Time5": "49192",
+              "Time6": "7282",
+              "Time7": "0",
+              "Time8": "0",
+              "Time9": "0"
+            }
+          },
+          "lidar_range": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "angle_setting_method": 0,
+              "lidar_range": [
+                0,
+                3600
+              ],
+              "laser_range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ],
+              "laser_range_extend": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ],
+              "laser_enable": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          "lidar_mode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "lidar_mode": "2"
+            }
+          },
+          "standbymode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "standbymode": "0"
+            }
+          },
+          "workmode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "WorkMode": 0
+            }
+          },
+          "upgrade_log": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": [
+              {
+                "sn": 1,
+                "sw_ver": "2.0.18",
+                "down_fm_ver": "2.0.20",
+                "up_fm_ver": "2.0.13"
+              }
+            ]
+          },
+          "anti_interference": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "anti_interference": "0"
+            }
+          },
+          "PTP_lock_offset": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "PTP_lock_offset": "1"
+            }
+          },
+          "anti_interf_mode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "mode": "1"
+            }
+          },
+          "ethernetmode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "ethernetmode": "1"
+            }
+          },
+          "lidar_calibration": [
+            "Laser id,Elevation,Azimuth",
+            "1,-52.709,8.145",
+            "2,-50.397,7.776",
+            "3,-48.22,7.479",
+            "4,-46.081,7.232",
+            "5,-44.049,7.013",
+            "6,-42.091,6.8229999999999995",
+            "7,-40.191,6.65",
+            "8,-38.341,6.504",
+            "9,-36.552,6.372000000000001",
+            "10,-34.802,6.263999999999999",
+            "11,-33.085,6.159",
+            "12,-31.406,6.064",
+            "13,-29.741,5.982",
+            "14,-28.114,5.91",
+            "15,-26.5,5.843",
+            "16,-24.917,5.7860000000000005",
+            "17,-23.359,-5.559",
+            "18,-21.807,-5.481",
+            "19,-20.24,-5.419",
+            "20,-18.719,-5.365",
+            "21,-17.213,-5.321000000000001",
+            "22,-15.691,-5.263999999999999",
+            "23,-14.191,-5.225",
+            "24,-12.706,-5.191",
+            "25,-11.22,-5.152",
+            "26,-9.74,-5.122000000000001",
+            "27,-8.26,-5.091",
+            "28,-6.789,-5.073",
+            "29,-5.325,-5.053999999999999",
+            "30,-3.859,-5.043",
+            "31,-2.391,-5.023",
+            "32,-0.928,-5.023",
+            "33,0.509,5.419",
+            "34,1.972,5.43",
+            "35,3.431,5.437",
+            "36,4.884,5.455",
+            "37,6.353,5.475",
+            "38,7.833,5.489",
+            "39,9.296,5.505",
+            "40,10.772,5.529",
+            "41,12.254,5.561",
+            "42,13.747,5.5920000000000005",
+            "43,15.24,5.626",
+            "44,16.749,5.665",
+            "45,18.26,5.705",
+            "46,19.795,5.75",
+            "47,21.321,5.801",
+            "48,22.873,5.862",
+            "49,24.495,-5.441",
+            "50,26.086,-5.513",
+            "51,27.689,-5.586",
+            "52,29.316,-5.669",
+            "53,30.957,-5.768",
+            "54,32.636,-5.87",
+            "55,34.358,-5.995",
+            "56,36.105,-6.126",
+            "57,37.885,-6.268",
+            "58,39.705,-6.431",
+            "59,41.576,-6.621",
+            "60,43.529,-6.851",
+            "61,45.54,-7.097",
+            "62,47.621,-7.397",
+            "63,49.802,-7.74",
+            "64,52.048,-8.144"
+          ],
+          "Calibration": {
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2025-09-12 00:00:00.000",
+              "model": "ISO",
+              "rot_00": -0.999619181985686,
+              "rot_01": 0.0168416978698785,
+              "rot_02": -0.0218597396857325,
+              "rot_10": -0.0273613483673855,
+              "rot_11": -0.502018989961124,
+              "rot_12": 0.864423675250702,
+              "rot_20": 0.00358435793229776,
+              "rot_21": 0.864692599095929,
+              "rot_22": 0.502288623648735,
+              "trans_0_m": 0.94451616845467,
+              "trans_1_m": 0.788171109872088,
+              "trans_2_m": 1.72779559451447,
+              "yaw": -3.11422771425803,
+              "pitch": -0.00358436560742131,
+              "roll": 1.04454912252371
+            }
+          },
+          "plugin": {
+            "Name": "LR4LEFT",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "PandarQT",
+        "position": "RS",
+        "serial": "QT39CF509639CE53",
+        "streams": [
+          "LBVS730_20251209_153903_GTLDR_RS.bin"
+        ],
+        "attributes": {
+          "device_info": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "SN": "QT39CF509639CE53",
+              "Mac": "EC:9F:0D:00:E1:79",
+              "SW_Ver": "2.0.18",
+              "HW_Ver": "2.2.0",
+              "FW_Ver": "2.0.20",
+              "Model": "Pandar_ZYNQ",
+              "AngleOffset": "30716",
+              "CalibSize": "0",
+              "FPGA_Ver": "",
+              "LidarCalibSize": "1141",
+              "Up_Fpga_Ver": "2.0.13",
+              "Udp_Seq": "1",
+              "ProdDate": "2022-06-17",
+              "ProdName": "PandarQT",
+              "LidarDataFormat": "1",
+              "Trigger_Method": "1",
+              "LaserNum": "64",
+              "Firing_Method": "",
+              "AccAnglePhase": "0",
+              "AccAnglePeak": "0",
+              "AccAngleEnable": "0",
+              "MotorType": "1",
+              "LargeCodeRange": "1"
+            }
+          },
+          "ethernet_all": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "Control_IP": {
+                "IPv4": "192.168.13.201",
+                "Mask": "255.255.255.0",
+                "Gateway": "192.168.13.101",
+                "DHCP": 0,
+                "VlanFlag": 0,
+                "VlanID": 1
+              },
+              "Stream_IP": {
+                "IPv4": "172.31.3.44"
+              }
+            }
+          },
+          "lidar_config": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "SpinSpeed": "2",
+              "DestIp": "255.255.255.255",
+              "DestPort": "2371",
+              "GPS": "0",
+              "GPS_GPRMC": "0",
+              "FPGA_DOWN_VER": "2.0.20",
+              "ClockSource": "1",
+              "PTPStatus": "Locked (offset: -3 ns)",
+              "PTPConfig": "{\"Domain\":0,\"Network\":0,\"LogAnnounceInterval\":1,\"LogSyncInterval\":1,\"LogMinDelayReqInterval\":0}",
+              "RotateDirection": "0",
+              "NoiseFiltering": "0",
+              "ReflectivityMapping": "0",
+              "GpsPort": "10110",
+              "ClockDataFormat": "0",
+              "gPTPConfig": "{\"Domain\":0,\"Network\":1,\"LogAnnounceInterval\":0,\"LogSyncInterval\":-3,\"LogMinDelayReqInterval\":0}",
+              "PTPProfile": "1",
+              "gPTPConfig_avnu": "{\"Domain\":0,\"Network\":1,\"LogAnnounceInterval\":0,\"LogSyncInterval\":-3,\"LogMinDelayReqInterval\":0}",
+              "RetroMultiReflection": "0"
+            }
+          },
+          "lidar_sync": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "sync": "0",
+              "syncAngle": "0"
+            }
+          },
+          "TimeStatistic": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "StartupTimes": "1588",
+              "CurrentTemp": "33.31",
+              "TotalWorkingTime": "136673",
+              "SystemUptime": "35",
+              "Time0": "0",
+              "Time1": "0",
+              "Time2": "8",
+              "Time3": "7236",
+              "Time4": "80021",
+              "Time5": "48300",
+              "Time6": "1108",
+              "Time7": "0",
+              "Time8": "0",
+              "Time9": "0"
+            }
+          },
+          "lidar_range": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "angle_setting_method": 0,
+              "lidar_range": [
+                0,
+                3600
+              ],
+              "laser_range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ],
+              "laser_range_extend": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ],
+              "laser_enable": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          "lidar_mode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "lidar_mode": "2"
+            }
+          },
+          "standbymode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "standbymode": "0"
+            }
+          },
+          "workmode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "WorkMode": 0
+            }
+          },
+          "upgrade_log": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": [
+              {
+                "sn": 1,
+                "sw_ver": "2.0.18",
+                "down_fm_ver": "2.0.20",
+                "up_fm_ver": "2.0.13"
+              }
+            ]
+          },
+          "anti_interference": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "anti_interference": "0"
+            }
+          },
+          "PTP_lock_offset": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "PTP_lock_offset": "100"
+            }
+          },
+          "anti_interf_mode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "mode": "1"
+            }
+          },
+          "ethernetmode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "ethernetmode": "1"
+            }
+          },
+          "lidar_calibration": [
+            "Laser id,Elevation,Azimuth",
+            "1,-51.926,8.208",
+            "2,-49.62,7.826",
+            "3,-47.455,7.541",
+            "4,-45.361,7.278",
+            "5,-43.344,7.049",
+            "6,-41.394,6.86",
+            "7,-39.509,6.676",
+            "8,-37.672,6.536",
+            "9,-35.899,6.398",
+            "10,-34.155,6.272",
+            "11,-32.439,6.17",
+            "12,-30.773,6.078",
+            "13,-29.122,5.975",
+            "14,-27.486,5.895",
+            "15,-25.886,5.831",
+            "16,-24.308,5.767",
+            "17,-22.81,-5.512",
+            "18,-21.263,-5.45",
+            "19,-19.711,-5.395",
+            "20,-18.19,-5.348",
+            "21,-16.68,-5.309",
+            "22,-15.178,-5.262",
+            "23,-13.661,-5.241",
+            "24,-12.181,-5.208",
+            "25,-10.702,-5.183",
+            "26,-9.218,-5.164",
+            "27,-7.743,-5.144",
+            "28,-6.28,-5.136",
+            "29,-4.816,-5.122",
+            "30,-3.342,-5.121",
+            "31,-1.883,-5.115",
+            "32,-0.424,-5.112",
+            "33,1.063,5.309",
+            "34,2.531,5.312",
+            "35,3.982,5.314",
+            "36,5.44,5.319",
+            "37,6.909,5.33",
+            "38,8.381,5.34",
+            "39,9.848,5.358",
+            "40,11.331,5.371",
+            "41,12.812,5.393",
+            "42,14.301,5.417",
+            "43,15.803,5.451",
+            "44,17.309,5.476",
+            "45,18.825,5.514",
+            "46,20.352,5.551",
+            "47,21.891,5.593",
+            "48,23.43,5.647",
+            "49,25.008,-5.709",
+            "50,26.6,-5.795",
+            "51,28.207,-5.89",
+            "52,29.832,-5.985",
+            "53,31.489,-6.106",
+            "54,33.171,-6.218",
+            "55,34.894,-6.368",
+            "56,36.649,-6.519",
+            "57,38.435,-6.684",
+            "58,40.268,-6.877",
+            "59,42.145,-7.096",
+            "60,44.12,-7.355",
+            "61,46.139,-7.652",
+            "62,48.209,-7.986",
+            "63,50.428,-8.386",
+            "64,52.746,-8.864"
+          ],
+          "Calibration": {
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2025-09-12 00:00:00.000",
+              "model": "ISO",
+              "rot_00": 0.999640563449302,
+              "rot_01": 0.00483577084802083,
+              "rot_02": -0.0263696649024308,
+              "rot_10": -0.0249936614726285,
+              "rot_11": 0.523922665165577,
+              "rot_12": -0.851399059085685,
+              "rot_20": 0.00969849436524578,
+              "rot_21": 0.851752109622339,
+              "rot_22": 0.523855211829512,
+              "trans_0_m": 0.971972,
+              "trans_1_m": -0.757025,
+              "trans_2_m": 1.695685,
+              "yaw": -0.024997440302873,
+              "pitch": -0.00969864641302672,
+              "roll": 1.01939679633703
+            }
+          },
+          "plugin": {
+            "Name": "LR2RIGHT",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "PandarQT",
+        "position": "RC",
+        "serial": "QT3BC955973BC856",
+        "streams": [
+          "LBVS730_20251209_153903_GTLDR_RC.bin"
+        ],
+        "attributes": {
+          "device_info": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "SN": "QT3BC955973BC856",
+              "Mac": "EC:9F:0D:00:E0:97",
+              "SW_Ver": "2.0.18",
+              "HW_Ver": "2.2.0",
+              "FW_Ver": "2.0.20",
+              "Model": "Pandar_ZYNQ",
+              "AngleOffset": "30911",
+              "CalibSize": "0",
+              "FPGA_Ver": "",
+              "LidarCalibSize": "1141",
+              "Up_Fpga_Ver": "2.0.13",
+              "Udp_Seq": "1",
+              "ProdDate": "2022-06-19",
+              "ProdName": "PandarQT",
+              "LidarDataFormat": "1",
+              "Trigger_Method": "1",
+              "LaserNum": "64",
+              "Firing_Method": "",
+              "AccAnglePhase": "0",
+              "AccAnglePeak": "0",
+              "AccAngleEnable": "0",
+              "MotorType": "1",
+              "LargeCodeRange": "1"
+            }
+          },
+          "ethernet_all": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "Control_IP": {
+                "IPv4": "192.168.12.201",
+                "Mask": "255.255.255.0",
+                "Gateway": "192.168.12.101",
+                "DHCP": 0,
+                "VlanFlag": 0,
+                "VlanID": 1
+              },
+              "Stream_IP": {
+                "IPv4": "172.31.3.44"
+              }
+            }
+          },
+          "lidar_config": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "SpinSpeed": "2",
+              "DestIp": "255.255.255.255",
+              "DestPort": "2370",
+              "GPS": "0",
+              "GPS_GPRMC": "0",
+              "FPGA_DOWN_VER": "2.0.20",
+              "ClockSource": "1",
+              "PTPStatus": "Locked (offset: 17 ns)",
+              "PTPConfig": "{\"Domain\":0,\"Network\":0,\"LogAnnounceInterval\":1,\"LogSyncInterval\":1,\"LogMinDelayReqInterval\":0}",
+              "RotateDirection": "0",
+              "NoiseFiltering": "0",
+              "ReflectivityMapping": "0",
+              "GpsPort": "10110",
+              "ClockDataFormat": "0",
+              "gPTPConfig": "{\"Domain\":0,\"Network\":1,\"LogAnnounceInterval\":0,\"LogSyncInterval\":-3,\"LogMinDelayReqInterval\":0}",
+              "PTPProfile": "1",
+              "gPTPConfig_avnu": "{\"Domain\":0,\"Network\":1,\"LogAnnounceInterval\":1,\"LogSyncInterval\":1,\"LogMinDelayReqInterval\":1}",
+              "RetroMultiReflection": "0"
+            }
+          },
+          "lidar_sync": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "sync": "0",
+              "syncAngle": "0"
+            }
+          },
+          "TimeStatistic": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "StartupTimes": "1595",
+              "CurrentTemp": "35.36",
+              "TotalWorkingTime": "164725",
+              "SystemUptime": "35",
+              "Time0": "0",
+              "Time1": "0",
+              "Time2": "14",
+              "Time3": "6098",
+              "Time4": "72880",
+              "Time5": "83131",
+              "Time6": "2602",
+              "Time7": "0",
+              "Time8": "0",
+              "Time9": "0"
+            }
+          },
+          "lidar_range": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "angle_setting_method": 0,
+              "lidar_range": [
+                0,
+                3600
+              ],
+              "laser_range": [
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0
+                ]
+              ],
+              "laser_range_extend": [
+                [
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ]
+              ],
+              "laser_enable": [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ]
+            }
+          },
+          "lidar_mode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "lidar_mode": "2"
+            }
+          },
+          "standbymode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "standbymode": "0"
+            }
+          },
+          "workmode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "WorkMode": 0
+            }
+          },
+          "upgrade_log": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": [
+              {
+                "sn": 1,
+                "sw_ver": "2.0.18",
+                "down_fm_ver": "2.0.20",
+                "up_fm_ver": "2.0.13"
+              }
+            ]
+          },
+          "anti_interference": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "anti_interference": "0"
+            }
+          },
+          "PTP_lock_offset": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "PTP_lock_offset": "100"
+            }
+          },
+          "anti_interf_mode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "mode": "1"
+            }
+          },
+          "ethernetmode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "ethernetmode": "1"
+            }
+          },
+          "lidar_calibration": [
+            "Laser id,Elevation,Azimuth",
+            "1,-52.705,8.031",
+            "2,-50.418,7.674",
+            "3,-48.187,7.395",
+            "4,-46.129,7.151",
+            "5,-44.072,6.925",
+            "6,-42.11,6.747",
+            "7,-40.224,6.589",
+            "8,-38.372,6.436",
+            "9,-36.587,6.312",
+            "10,-34.844,6.192",
+            "11,-33.125,6.104",
+            "12,-31.442,6.011",
+            "13,-29.771,5.924",
+            "14,-28.143,5.852",
+            "15,-26.535,5.792",
+            "16,-24.952,5.722",
+            "17,-23.411,-5.6",
+            "18,-21.864,-5.529",
+            "19,-20.318,-5.464",
+            "20,-18.784,-5.405",
+            "21,-17.27,-5.352",
+            "22,-15.731,-5.303",
+            "23,-14.256,-5.269",
+            "24,-12.767,-5.235",
+            "25,-11.277,-5.2",
+            "26,-9.805,-5.183",
+            "27,-8.326,-5.151",
+            "28,-6.859,-5.134",
+            "29,-5.395,-5.119",
+            "30,-3.917,-5.108",
+            "31,-2.466,-5.1",
+            "32,-0.999,-5.096",
+            "33,0.464,5.338",
+            "34,1.919,5.345",
+            "35,3.383,5.345",
+            "36,4.836,5.353",
+            "37,6.305,5.372",
+            "38,7.779,5.381",
+            "39,9.248,5.397",
+            "40,10.717,5.421",
+            "41,12.199,5.439",
+            "42,13.693,5.465",
+            "43,15.179,5.493",
+            "44,16.674,5.526",
+            "45,18.199,5.569",
+            "46,19.721,5.604",
+            "47,21.264,5.645",
+            "48,22.8,5.7",
+            "49,24.403,-5.598",
+            "50,25.992,-5.676",
+            "51,27.591,-5.766",
+            "52,29.215,-5.86",
+            "53,30.866,-5.962",
+            "54,32.538,-6.078",
+            "55,34.25,-6.218",
+            "56,35.997,-6.352",
+            "57,37.771,-6.515",
+            "58,39.594,-6.709",
+            "59,41.472,-6.905",
+            "60,43.406,-7.153",
+            "61,45.415,-7.434",
+            "62,47.51,-7.75",
+            "63,49.671,-8.124",
+            "64,51.968,-8.586"
+          ],
+          "Calibration": {
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2025.09.12 00:00:00.000",
+              "model": "ISO",
+              "rot_00": -0.000663735556506,
+              "rot_01": 0.751119730464084,
+              "rot_02": -0.660165668573179,
+              "rot_10": -0.999806443443777,
+              "rot_11": -0.0134793176133116,
+              "rot_12": -0.014331212265038,
+              "rot_20": -0.019663039017841,
+              "rot_21": 0.660028377044685,
+              "rot_22": 0.750983293018122,
+              "trans_0_m": -1.14018,
+              "trans_1_m": -0.015924,
+              "trans_2_m": 1.143307,
+              "yaw": -1.57146019074912,
+              "pitch": 0.0196643063085313,
+              "roll": 0.721026441563509
+            }
+          },
+          "plugin": {
+            "Name": "LR3REAR",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "Pandar128E3X",
+        "position": "TC",
+        "serial": "P12830CF569930CD57",
+        "streams": [
+          "LBVS730_20251209_153903_GTLDR_TC.bin"
+        ],
+        "attributes": {
+          "device_info": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "SN": "P12830CF569930CD57",
+              "Mac": "EC:9F:0D:00:E7:5A",
+              "SW_Ver": "1.45.119",
+              "HW_Ver": "1.0.0",
+              "FW_Ver": "1.45.124",
+              "Model": "Pandar_ZYNQ",
+              "AngleOffset": "17972",
+              "CalibSize": "0",
+              "FPGA_Ver": "",
+              "LidarCalibSize": "1536",
+              "Up_Fpga_Ver": "1.45.131       ",
+              "Udp_Seq": "1",
+              "ProdDate": "2022-06-28",
+              "ProdName": "Pandar128E3X",
+              "LidarDataFormat": "0",
+              "Trigger_Method": "1",
+              "LaserNum": "128",
+              "Firing_Method": "2",
+              "AccAnglePhase": "19347",
+              "AccAnglePeak": "6",
+              "AccAngleEnable": "1",
+              "MotorType": "1",
+              "LargeCodeRange": "1",
+              "PN": "Pandar128E3X-I02",
+              "customer_pn_info": "{\"enable\": \"0\",\"customer_pn\":\"\"}"
+            }
+          },
+          "ethernet_all": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "Control_IP": {
+                "IPv4": "192.168.10.201",
+                "Mask": "255.255.255.0",
+                "Gateway": "192.168.10.100",
+                "DHCP": 0,
+                "VlanFlag": 0,
+                "VlanID": 0
+              },
+              "Stream_IP": {
+                "IPv4": "172.31.3.44"
+              }
+            }
+          },
+          "lidar_config": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "SpinSpeed": "3",
+              "DestIp": "255.255.255.255",
+              "DestPort": "2368",
+              "GPS": "0",
+              "GPS_GPRMC": "0",
+              "FPGA_DOWN_VER": "1.45.124",
+              "ClockSource": "1",
+              "PTPStatus": "Locked (offset: -3 ns)",
+              "PTPConfig": "{\"Domain\":0,\"Network\":0,\"LogAnnounceInterval\":1,\"LogSyncInterval\":1,\"LogMinDelayReqInterval\":0,\"tsn_switch\":1}",
+              "RotateDirection": "0",
+              "NoiseFiltering": "1",
+              "ReflectivityMapping": "1",
+              "GpsPort": "10110",
+              "ClockDataFormat": "0",
+              "gPTPConfig": "{\"Domain\":0,\"Network\":1,\"LogAnnounceInterval\":0,\"LogSyncInterval\":-3,\"LogMinDelayReqInterval\":0,\"tsn_switch\":0}",
+              "PTPProfile": "1",
+              "gPTPConfig_avnu": "{\"Domain\":0,\"Network\":1,\"LogAnnounceInterval\":0,\"LogSyncInterval\":-3,\"LogMinDelayReqInterval\":0,\"tsn_switch\":1}",
+              "InterstitialPoints": "1",
+              "RetroMultiReflection": "0"
+            }
+          },
+          "lidar_sync": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "sync": "0",
+              "syncAngle": "0"
+            }
+          },
+          "TimeStatistic": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "StartupTimes": "1580",
+              "CurrentTemp": "31.70",
+              "CurrentHumidity": " 52.2",
+              "TotalWorkingTime": "155204",
+              "SystemUptime": "34",
+              "Time0": "51",
+              "Time1": "0",
+              "Time2": "13",
+              "Time3": "8953",
+              "Time4": "81028",
+              "Time5": "51178",
+              "Time6": "13981",
+              "Time7": "0",
+              "Time8": "0",
+              "Time9": "0"
+            }
+          },
+          "lidar_range": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "angle_setting_method": 0,
+              "lidar_range": [
+                0,
+                3600
+              ],
+              "lidar_range_extend": [
+                [
+                  0,
+                  0
+                ]
+              ]
+            }
+          },
+          "lidar_mode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "lidar_mode": "5"
+            }
+          },
+          "standbymode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "standbymode": "0"
+            }
+          },
+          "workmode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "WorkMode": 0
+            }
+          },
+          "upgrade_log": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": [
+              {
+                "sn": 1,
+                "sw_ver": "1.45.119",
+                "down_fm_ver": "1.45.124",
+                "up_fm_ver": "1.45.131       "
+              }
+            ]
+          },
+          "lidar_monitor": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "lidarInCur": "1522.00 mA",
+              "lidarInVol": "12.83 V",
+              "lidarInPower": "19.53 W"
+            }
+          },
+          "operational_mode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "operational_mode": "1"
+            }
+          },
+          "high_resolution": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "mode": "1"
+            }
+          },
+          "PTP_lock_offset": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "PTP_lock_offset": "1"
+            }
+          },
+          "blockage_detection": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "blockage_detection": "0"
+            }
+          },
+          "customer_mac": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "enable": "",
+              "customer_mac": ""
+            }
+          },
+          "log_file_list": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "FileNameList": [
+                {
+                  "filename": "pandar_control_1002_error.log"
+                },
+                {
+                  "filename": "diag_ff_1003_warn.log"
+                },
+                {
+                  "filename": "pandar_control_1002_warn.log"
+                },
+                {
+                  "filename": "diag_ff_1003_error.log"
+                },
+                {
+                  "filename": "pandar_control_1002_error.log.3.gz"
+                },
+                {
+                  "filename": "pandar_control_1002_warn.log.1.gz"
+                },
+                {
+                  "filename": "pandar_control_1002_error.log.2.gz"
+                }
+              ]
+            }
+          },
+          "http_mode": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "http_mode": "0"
+            }
+          },
+          "login_enable": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "login_enable": "0"
+            }
+          },
+          "reset_code": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "reset_code": "P12830CF569930CD57222522756028000502220008000d0048534d425f424d425f56342e300a000d0050616e6461723132382d666974"
+            }
+          },
+          "ptcs_info": {
+            "Head": {
+              "ErrorCode": "0",
+              "Message": "Success"
+            },
+            "Body": {
+              "ptcs_mode": "0",
+              "ptcs_ca_name": "",
+              "ptcs_ca_status": "0"
+            }
+          },
+          "lidar_calibration": [
+            "Laser id,Elevation,Azimuth",
+            "1,14.476,2.990",
+            "2,13.556,2.992",
+            "3,13.042,0.826",
+            "4,12.650,2.994",
+            "5,12.132,0.823",
+            "6,11.720,3.001",
+            "7,11.207,0.821",
+            "8,10.779,3.007",
+            "9,10.267,0.822",
+            "10,9.834,3.011",
+            "11,9.325,0.824",
+            "12,8.877,3.008",
+            "13,8.359,0.833",
+            "14,7.911,3.008",
+            "15,7.404,0.823",
+            "16,6.907,-1.376",
+            "17,6.429,0.814",
+            "18,5.943,-1.385",
+            "19,5.442,-3.582",
+            "20,4.957,-1.391",
+            "21,4.451,-3.578",
+            "22,3.968,-1.384",
+            "23,3.468,-3.582",
+            "24,2.981,-1.386",
+            "25,2.478,-3.587",
+            "26,1.966,-1.399",
+            "27,1.862,7.455",
+            "28,1.749,5.270",
+            "29,1.607,3.043",
+            "30,1.474,-3.587",
+            "31,1.362,0.826",
+            "32,1.225,-5.809",
+            "33,1.082,-8.002",
+            "34,0.978,-1.389",
+            "35,0.854,7.458",
+            "36,0.724,5.286",
+            "37,0.606,3.046",
+            "38,0.479,-3.592",
+            "39,0.343,0.815",
+            "40,0.209,-5.814",
+            "41,0.083,-8.015",
+            "42,-0.027,-1.392",
+            "43,-0.158,7.486",
+            "44,-0.279,5.293",
+            "45,-0.405,3.051",
+            "46,-0.535,-3.591",
+            "47,-0.660,0.823",
+            "48,-0.798,-5.822",
+            "49,-0.920,-8.027",
+            "50,-1.044,-1.392",
+            "51,-1.164,7.495",
+            "52,-1.296,5.299",
+            "53,-1.426,3.062",
+            "54,-1.546,-3.591",
+            "55,-1.671,0.826",
+            "56,-1.814,-5.827",
+            "57,-1.932,-8.035",
+            "58,-2.051,-1.393",
+            "59,-2.174,7.504",
+            "60,-2.306,5.311",
+            "61,-2.443,3.064",
+            "62,-2.554,-3.594",
+            "63,-2.699,0.822",
+            "64,-2.818,-5.836",
+            "65,-2.940,-8.028",
+            "66,-3.072,-1.393",
+            "67,-3.196,7.516",
+            "68,-3.325,5.319",
+            "69,-3.453,3.074",
+            "70,-3.572,-3.598",
+            "71,-3.707,0.838",
+            "72,-3.839,-5.842",
+            "73,-3.952,-8.062",
+            "74,-4.080,-1.398",
+            "75,-4.213,7.533",
+            "76,-4.356,5.336",
+            "77,-4.473,3.085",
+            "78,-4.596,-3.605",
+            "79,-4.733,0.834",
+            "80,-4.845,-5.850",
+            "81,-4.971,-8.075",
+            "82,-5.104,-1.404",
+            "83,-5.233,7.550",
+            "84,-5.369,5.344",
+            "85,-5.491,3.092",
+            "86,-5.604,-3.615",
+            "87,-5.753,0.827",
+            "88,-5.877,-5.860",
+            "89,-5.983,-8.086",
+            "90,-6.123,-1.400",
+            "91,-6.626,-3.624",
+            "92,-7.144,-1.399",
+            "93,-7.645,-3.635",
+            "94,-8.158,-1.403",
+            "95,-8.653,-3.633",
+            "96,-9.167,3.115",
+            "97,-9.672,-3.636",
+            "98,-10.184,3.125",
+            "99,-10.699,0.851",
+            "100,-11.181,3.133",
+            "101,-11.705,0.864",
+            "102,-12.182,3.146",
+            "103,-12.710,0.870",
+            "104,-13.179,3.157",
+            "105,-13.705,0.879",
+            "106,-14.172,3.169",
+            "107,-14.694,0.889",
+            "108,-15.153,3.172",
+            "109,-15.679,0.900",
+            "110,-16.125,3.186",
+            "111,-16.659,0.897",
+            "112,-17.121,-1.397",
+            "113,-17.639,0.902",
+            "114,-18.088,-1.392",
+            "115,-18.576,-3.681",
+            "116,-19.041,-1.393",
+            "117,-19.521,-3.681",
+            "118,-19.999,-1.394",
+            "119,-20.471,-3.680",
+            "120,-20.927,-1.389",
+            "121,-21.395,-3.679",
+            "122,-21.859,-1.382",
+            "123,-22.336,-3.680",
+            "124,-22.777,-1.396",
+            "125,-23.242,-3.685",
+            "126,-23.684,-1.394",
+            "127,-24.149,-3.694",
+            "128,-25.035,-3.698"
+          ],
+          "Calibration": {
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2025-09-12 00:00:00.000",
+              "model": "ISO",
+              "rot_00": -0.999980570041038,
+              "rot_01": 0.00623039792752669,
+              "rot_02": -0.000204161859346023,
+              "rot_10": -0.00623078499812015,
+              "rot_11": -0.999978680285614,
+              "rot_12": 0.0019535333497299,
+              "rot_20": -0.000191986216539982,
+              "rot_21": 0.00195476748130748,
+              "rot_22": 0.999998071010833,
+              "trans_0_m": 1.357492,
+              "trans_1_m": -0.021478,
+              "trans_2_m": 1.712065,
+              "yaw": -3.13536182816017,
+              "pitch": 0.000191986217719376,
+              "roll": -3.13536182816017
+            }
+          },
+          "plugin": {
+            "Name": "LR1TOP",
+            "Version": "v4.1.0"
+          }
+        }
+      }
+    ],
+    "HMD": [
+      {
+        "model": "DFT485",
+        "position": "WF",
+        "serial": "NA",
+        "streams": [
+          "LBVS730_20251209_153903_HMD_WF.bin"
+        ],
+        "attributes": {
+          "available": false,
+          "plugin": {
+            "Name": "HUMIDITY",
+            "Version": "v3.0.4"
+          }
+        }
+      }
+    ],
+    "IMU": [
+      {
+        "model": "RT3000V3",
+        "position": "NA",
+        "serial": "40079",
+        "streams": [
+          "LBVS730_20251209_153903_IMU_NA.bin"
+        ],
+        "attributes": {
+          "accuracy_settings": {
+            "warmup_behavior": {
+              "min_pos_accuracy": {
+                "accuracy_green_m": 0.025,
+                "accuracy_orange_m": 0.1,
+                "accuracy_red_m": 0.101
+              },
+              "ntrip_status_check": false,
+              "time_limit_s": 60
+            },
+            "running_behavior": {
+              "min_pos_accuracy": {
+                "accuracy_green_m": 0.025,
+                "accuracy_orange_m": 0.1,
+                "accuracy_red_m": 0.101
+              },
+              "ntrip_status_check": true,
+              "behavior": "Do not interrupt recording"
+            }
+          },
+          "device_info": {
+            "Operating system version 1": 255,
+            "Operating system version 2": 255,
+            "Operating system version 3": 255,
+            "Start-up script version": 4294967040,
+            "Serial number": 40079
+          },
+          "device_status": {
+            "Number of IMU packets missed": 0,
+            "Number of IMU resets detected": 0,
+            "Number of IMU errors detected": 0,
+            "Calibration date": 15548,
+            "Calibration date (converted)": "2022-07-31T23:59:42.000Z",
+            "IMU temperature [C]": 31
+          },
+          "gps_data_info": {
+            "GPS Time": 24155470,
+            "GPS Time (converted)": "2025-12-09T15:09:42.000Z",
+            "Total number of satellites": 31,
+            "Position Mode": "RTK Integer",
+            "Velocity Mode": "RTK Integer",
+            "Orientation Mode": "None"
+          },
+          "heading_info": {
+            "valid": true,
+            "Time mismatch counter": 0,
+            "IMU time difference [ms]": 10,
+            "IMU time margin [ms]": 12,
+            "IMU loop time [ms]": 0,
+            "Output loop time [ms]": 2
+          },
+          "Calibration": {
+            "Intrinsics": {
+              "available": false
+            },
+            "Extrinsics": {
+              "available": false
+            }
+          },
+          "plugin": {
+            "Name": "OXTS",
+            "Version": "v3.1.0"
+          }
+        }
+      }
+    ],
+    "LDR": [
+      {
+        "model": "Scala2",
+        "position": "FC",
+        "serial": "NA",
+        "streams": [
+          "LBVS730_20251209_153903_LDR_FC.bin"
+        ],
+        "attributes": {
+          "available": false,
+          "plugin": {
+            "Name": "SCALAFRONT",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "Scala2",
+        "position": "RC",
+        "serial": "NA",
+        "streams": [
+          "LBVS730_20251209_153903_LDR_RC.bin"
+        ],
+        "attributes": {
+          "available": false,
+          "plugin": {
+            "Name": "SCALAREAR",
+            "Version": "v4.1.0"
+          }
+        }
+      }
+    ],
+    "LUX": [
+      {
+        "model": "HKS485",
+        "position": "Sky",
+        "serial": "NA",
+        "streams": [
+          "LBVS730_20251209_153903_LUX_Sky.bin"
+        ],
+        "attributes": {
+          "available": false,
+          "plugin": {
+            "Name": "LUXTOP",
+            "Version": "v4.0.4"
+          }
+        }
+      },
+      {
+        "model": "HKS485",
+        "position": "Front",
+        "serial": "NA",
+        "streams": [
+          "LBVS730_20251209_153903_LUX_Front.bin"
+        ],
+        "attributes": {
+          "available": false,
+          "plugin": {
+            "Name": "LUXFRONT",
+            "Version": "v4.0.4"
+          }
+        }
+      },
+      {
+        "model": "HKS485",
+        "position": "Rear",
+        "serial": "NA",
+        "streams": [
+          "LBVS730_20251209_153903_LUX_Rear.bin"
+        ],
+        "attributes": {
+          "available": false,
+          "plugin": {
+            "Name": "LUXREAR",
+            "Version": "v4.0.4"
+          }
+        }
+      }
+    ],
+    "SVS": [
+      {
+        "model": "SVS",
+        "position": "FV",
+        "serial": "H190XA-G04150855",
+        "streams": [
+          "LBVS730_20251209_153903_SVS_FV.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 1920,
+              "ImageHeight": 1536,
+              "Model": "",
+              "fx": 508.5680717047,
+              "fy": 508.2508992024,
+              "cx": 956.2602317533,
+              "cy": 770.9854163025,
+              "pinhole_k1": 0,
+              "pinhole_k2": 0,
+              "pinhole_p1": 0,
+              "pinhole_p2": 0,
+              "pinhole_k3": 0,
+              "pinhole_k4": 0,
+              "pinhole_k5": 0,
+              "pinhole_k6": 0,
+              "fisheye_k1": 0.1332141314,
+              "fisheye_k2": -0.0334593873,
+              "fisheye_k3": -0.0017021903,
+              "fisheye_k4": 0.0008696,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "0",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 0,
+              "height_px": 0,
+              "cx_px": 0,
+              "cy_px": 0
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2025-04-29 15:19:04.526922",
+              "model": "ISO",
+              "rot_00": -0.01107,
+              "rot_01": -0.00234,
+              "rot_02": 0.999936,
+              "rot_10": -0.999902,
+              "rot_11": 0.008577,
+              "rot_12": -0.01105,
+              "rot_20": -0.00855,
+              "rot_21": -0.99996,
+              "rot_22": -0.002435,
+              "trans_0_m": 3.906404,
+              "trans_1_m": 0.12004,
+              "trans_2_m": 0.608496,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "SVS",
+            "Version": "v4.0.1"
+          }
+        }
+      },
+      {
+        "model": "SVS",
+        "position": "MVR",
+        "serial": "H190XA-G04150977",
+        "streams": [
+          "LBVS730_20251209_153903_SVS_MVR.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 1920,
+              "ImageHeight": 1536,
+              "Model": "",
+              "fx": 510.0571957848,
+              "fy": 509.9134416735,
+              "cx": 957.9024124347,
+              "cy": 768.5005603579,
+              "pinhole_k1": 0,
+              "pinhole_k2": 0,
+              "pinhole_p1": 0,
+              "pinhole_p2": 0,
+              "pinhole_k3": 0,
+              "pinhole_k4": 0,
+              "pinhole_k5": 0,
+              "pinhole_k6": 0,
+              "fisheye_k1": 0.1365937451,
+              "fisheye_k2": -0.0381119973,
+              "fisheye_k3": 0.0003310809,
+              "fisheye_k4": 0.0005557538,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "0",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 0,
+              "height_px": 0,
+              "cx_px": 0,
+              "cy_px": 0
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2025-04-29 15:19:04.526922",
+              "model": "ISO",
+              "rot_00": -0.997501,
+              "rot_01": -0.033259,
+              "rot_02": 0.06233,
+              "rot_10": -0.070113,
+              "rot_11": 0.57441,
+              "rot_12": -0.815559,
+              "rot_20": -0.008678,
+              "rot_21": -0.817892,
+              "rot_22": -0.575307,
+              "trans_0_m": 2.09897,
+              "trans_1_m": -1.047076,
+              "trans_2_m": 0.986669,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "SVS",
+            "Version": "v4.0.1"
+          }
+        }
+      },
+      {
+        "model": "SVS",
+        "position": "RV",
+        "serial": "H190XA-G04150931",
+        "streams": [
+          "LBVS730_20251209_153903_SVS_RV.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 1920,
+              "ImageHeight": 1536,
+              "Model": "",
+              "fx": 508.6753233213,
+              "fy": 508.6934851127,
+              "cx": 961.584675778,
+              "cy": 769.1853827922,
+              "pinhole_k1": 0,
+              "pinhole_k2": 0,
+              "pinhole_p1": 0,
+              "pinhole_p2": 0,
+              "pinhole_k3": 0,
+              "pinhole_k4": 0,
+              "pinhole_k5": 0,
+              "pinhole_k6": 0,
+              "fisheye_k1": 0.1337431105,
+              "fisheye_k2": -0.0342216673,
+              "fisheye_k3": -0.0019794876,
+              "fisheye_k4": 0.0011020297,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "0",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 0,
+              "height_px": 0,
+              "cx_px": 0,
+              "cy_px": 0
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2025-04-29 15:19:04.526922",
+              "model": "ISO",
+              "rot_00": -0.014732,
+              "rot_01": 0.390938,
+              "rot_02": -0.920299,
+              "rot_10": 0.999891,
+              "rot_11": 0.004657,
+              "rot_12": -0.014027,
+              "rot_20": -0.001198,
+              "rot_21": -0.920405,
+              "rot_22": -0.390964,
+              "trans_0_m": -1.067685,
+              "trans_1_m": -0.08078,
+              "trans_2_m": 0.873918,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "SVS",
+            "Version": "v4.0.1"
+          }
+        }
+      },
+      {
+        "model": "SVS",
+        "position": "MVL",
+        "serial": "H190XA-G04150983",
+        "streams": [
+          "LBVS730_20251209_153903_SVS_MVL.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 1920,
+              "ImageHeight": 1536,
+              "Model": "",
+              "fx": 509.9284089626,
+              "fy": 510.056878677,
+              "cx": 960.423576509,
+              "cy": 770.2876734361,
+              "pinhole_k1": 0,
+              "pinhole_k2": 0,
+              "pinhole_p1": 0,
+              "pinhole_p2": 0,
+              "pinhole_k3": 0,
+              "pinhole_k4": 0,
+              "pinhole_k5": 0,
+              "pinhole_k6": 0,
+              "fisheye_k1": 0.1357566321,
+              "fisheye_k2": -0.0364719286,
+              "fisheye_k3": -0.0006956064,
+              "fisheye_k4": 0.0007986104,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "0",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0,
+              "width_px": 0,
+              "height_px": 0,
+              "cx_px": 0,
+              "cy_px": 0
+            },
+            "Extrinsics": {
+              "available": true,
+              "method": "static",
+              "timestamp": "2025-04-29 15:19:04.526922",
+              "model": "ISO",
+              "rot_00": 0.998914,
+              "rot_01": -0.045335,
+              "rot_02": 0.010715,
+              "rot_10": -0.03155,
+              "rot_11": -0.489156,
+              "rot_12": 0.871626,
+              "rot_20": -0.034274,
+              "rot_21": -0.871018,
+              "rot_22": -0.490055,
+              "trans_0_m": 2.026303,
+              "trans_1_m": 1.049,
+              "trans_2_m": 0.977034,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "SVS",
+            "Version": "v4.0.1"
+          }
+        }
+      }
+    ],
+    "TH": [
+      {
+        "model": "GM_THERMAL",
+        "position": "FC",
+        "serial": "0",
+        "streams": [
+          "LBVS730_20251209_153903_TH_FC.bin"
+        ],
+        "attributes": {
+          "compression": false,
+          "dropped_frames": 0,
+          "Calibration": {
+            "Intrinsics": {
+              "ImageWidth": 640,
+              "ImageHeight": 512,
+              "Model": "",
+              "fx": 0,
+              "fy": 0,
+              "cx": 0,
+              "cy": 0,
+              "pinhole_k1": 0,
+              "pinhole_k2": 0,
+              "pinhole_p1": 0,
+              "pinhole_p2": 0,
+              "pinhole_k3": 0,
+              "pinhole_k4": 0,
+              "pinhole_k5": 0,
+              "pinhole_k6": 0,
+              "fisheye_k1": 0,
+              "fisheye_k2": 0,
+              "fisheye_k3": 0,
+              "fisheye_k4": 0,
+              "CMei_k1": 0,
+              "CMei_k2": 0,
+              "CMei_k3": 0,
+              "CMei_p1": 0,
+              "CMei_p2": 0,
+              "CMei_xi": 0,
+              "fov": 0,
+              "COD_origin": "",
+              "mount_compensation": 0,
+              "CRC32": 0,
+              "Colour orientation": 0,
+              "Data Type": 0,
+              "VFoV-bottom": 0,
+              "VFoV-top": 0,
+              "Aspect Ratio": 0,
+              "MAE Error": 0,
+              "HFoV-right": 0,
+              "HFoV-left": 0,
+              "Poly 4": 0,
+              "Poly 3": 0,
+              "Poly 2": 0,
+              "Poly 1": 0,
+              "COD offset Y": 0,
+              "COD offset X": 0,
+              "Not Used 2": 0,
+              "Not Used 1": 0,
+              "Lens Model": 0,
+              "COD origin": 0
+            },
+            "Extrinsics": {
+              "available": false,
+              "method": "static",
+              "timestamp": "",
+              "model": "",
+              "rot_00": 0,
+              "rot_01": 0,
+              "rot_02": 0,
+              "rot_10": 0,
+              "rot_11": 0,
+              "rot_12": 0,
+              "rot_20": 0,
+              "rot_21": 0,
+              "rot_22": 0,
+              "trans_0_m": 0,
+              "trans_1_m": 0,
+              "trans_2_m": 0,
+              "yaw": 0,
+              "pitch": 0,
+              "roll": 0
+            }
+          },
+          "plugin": {
+            "Name": "GMTHERMAL",
+            "Version": "v4.0.1"
+          }
+        }
+      }
+    ]
+  },
+  "mt_traceability": {
+    "DISPLAY": [
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "SVS_FV",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 1920,
+              "height": 1536
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "SVS_MVL",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 1920,
+              "height": 1536
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "SVS_MVR",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 1920,
+              "height": 1536
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "SVS_RV",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 1920,
+              "height": 1536
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "AD_FC",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 3840,
+              "height": 2160
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "AD_FT",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 3840,
+              "height": 2160
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "AD_FL",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 2880,
+              "height": 1860
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "AD_FR",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 2880,
+              "height": 1860
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "AD_RC",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 2880,
+              "height": 1860
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "AD_RL",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 2880,
+              "height": 1860
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "AD_RR",
+          "Remove Header": 64,
+          "Image Type": 4,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 2880,
+              "height": 1860
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_YUV",
+              "Image Format Settings": {
+                "Format_Parameter_1": 2
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 3
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "Worker Name": "TH_FC",
+          "Remove Header": 64,
+          "Image Type": 7,
+          "X2RGB Config": {
+            "imageSize": {
+              "width": 640,
+              "height": 513
+            },
+            "inputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 1,
+              "ImageFormat": "IMAGE_FORMAT_RAW",
+              "Image Format Settings": {
+                "Format_Parameter_1": 1
+              }
+            },
+            "outputFormat": {
+              "dataSize": 1,
+              "bitDepthPerChannel": 8,
+              "useBigEndian": 0,
+              "ImageFormat": "IMAGE_FORMAT_RGB",
+              "Image Format Settings": {
+                "Format_Parameter_1": 3
+              }
+            },
+            "conversionParams": {
+              "Conv_Param_1": 10
+            },
+            "deviceList": {
+              "preferred": "DEVICE_TYPE_CPU",
+              "alternative": "DEVICE_TYPE_GPU"
+            }
+          },
+          "plugin": {
+            "Name": "DISPLAY",
+            "Version": "v1.0.2"
+          }
+        }
+      }
+    ],
+    "MASTER": [
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "vehicle_id": "",
+          "recording_mode": "CONTINUOUS : 30.0 SECONDS",
+          "interfaces_version": "v2.0.1",
+          "time_and_sync_version": "v3.0.1",
+          "nmea_version": "v3.0.1",
+          "plugin": {
+            "Name": "MASTER",
+            "Version": "v4.1.0"
+          }
+        }
+      }
+    ],
+    "SYSTEM_HEALTH": [
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "available": false,
+          "plugin": {
+            "Name": "SYSTEMHEALTH",
+            "Version": "v2.0.2"
+          }
+        }
+      }
+    ],
+    "VPI": [
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "active_config": "all_sensors_20fps.VPI",
+          "build_directory": "C:\\Valeo\\VPI",
+          "plugin": {
+            "Name": "VPI",
+            "Version": "v23.3.4f4"
+          }
+        }
+      }
+    ],
+    "WRITER": [
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "AD2_FC ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "AD",
+                "sensor_position": "FC",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  536870912
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 2160,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 7680
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "AD1_FL ",
+          "queue_size": 125,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "AD",
+                "sensor_position": "FL",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 1860,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 5760
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "AD2_FR ",
+          "queue_size": 125,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "AD",
+                "sensor_position": "FR",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 1860,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 5760
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "AD1_FT ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "AD",
+                "sensor_position": "FT",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  536870912
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 2160,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 7680
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "AD1_RC ",
+          "queue_size": 125,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "AD",
+                "sensor_position": "RC",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 1860,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 5760
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "AD1_RL ",
+          "queue_size": 125,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "AD",
+                "sensor_position": "RL",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 1860,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 5760
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "AD2_RR ",
+          "queue_size": 125,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "AD",
+                "sensor_position": "RR",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 1860,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 5760
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "SVS_FV ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "SVS",
+                "sensor_position": "FV",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  536870912
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 1536,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 3840
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "SVS_MVL ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "SVS",
+                "sensor_position": "MVL",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  536870912
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 1536,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 3840
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "SVS_MVR ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "SVS",
+                "sensor_position": "MVR",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  536870912
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 1536,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 3840
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "SVS_RV ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "SVS",
+                "sensor_position": "RV",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  536870912
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 1536,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 3840
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "GMTHERMAL_Thermal ",
+          "queue_size": 250,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "Video Data V3",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 5400,
+              "use_file_header": true,
+              "file_header_size": 2560,
+              "trace definition": {
+                "sensor_name": "TH",
+                "sensor_position": "FC",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "Video Data V3"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": true,
+                  "file_header_size_bytes": 2560,
+                  "index_number_of_frames_on_file": 30,
+                  "index_padding_size": 28
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": true,
+                  "value_payload_header_size": 64,
+                  "index_F_Index": 16,
+                  "value_F_Index": 348160,
+                  "index_F_Size": 24,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 8,
+                  "index_frame_height": 12,
+                  "value_frame_height": 513,
+                  "index_bytes_per_line": 14,
+                  "value_bytes_per_line": 1280
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 348160
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 2
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "VEHICLEBUS_VEHICLEBUS ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "CAN",
+                "sensor_position": "VCAN",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "LR4LEFT_GTLDR4LEFT ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "GTLDR",
+                "sensor_position": "LS",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "LR3REAR_LR3REAR ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "GTLDR",
+                "sensor_position": "RC",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "LR2RIGHT_LR2RIGHT ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "GTLDR",
+                "sensor_position": "RS",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "LR1TOP_LR1TOP ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "GTLDR",
+                "sensor_position": "TC",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "HUMIDITY_Humidity_top ",
+          "queue_size": 10,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "HMD",
+                "sensor_position": "WF",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "OXTS_OXTS ",
+          "queue_size": 150,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "IMU",
+                "sensor_position": "NA",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "SCALAFRONT_SCALA2FRONT ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "LDR",
+                "sensor_position": "FC",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "SCALAREAR_SCALA2REAR ",
+          "queue_size": 100,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "LDR",
+                "sensor_position": "RC",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "LUXFRONT_LUXFRONT ",
+          "queue_size": 10,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "LUX",
+                "sensor_position": "Front",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "LUXREAR_LUXREAR ",
+          "queue_size": 10,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "LUX",
+                "sensor_position": "Rear",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      },
+      {
+        "model": "NA",
+        "position": "NA",
+        "serial": "NA",
+        "streams": [
+          ""
+        ],
+        "attributes": {
+          "stream_name": "LUXTOP_LUXTOP ",
+          "queue_size": 10,
+          "tarce_file_extension": "BIN",
+          "trace_data_type": "None",
+          "file_definition": {
+            "parent_settings": {
+              "max_frames_per_file": 2147483647,
+              "use_file_header": false,
+              "file_header_size": 0,
+              "trace definition": {
+                "sensor_name": "LUX",
+                "sensor_position": "Sky",
+                "trace_file_extension": "BIN",
+                "trace_data_type": "None"
+              },
+              "separation_char": "_",
+              "disk_sector_size": 4096
+            },
+            "child_settings": {
+              "winapi_settings": {
+                "file_flags_and_attributes": [
+                  128
+                ],
+                "desired_access": 1073741824,
+                "share_mode": 0,
+                "creation_disposition": 1
+              },
+              "video_settings": {
+                "file_header_attributes": {
+                  "allow_file_header_updates": false,
+                  "file_header_size_bytes": 0,
+                  "index_number_of_frames_on_file": 0,
+                  "index_padding_size": 0
+                },
+                "payload_header_attributes": {
+                  "allow_payload_header_updates": false,
+                  "value_payload_header_size": 0,
+                  "index_F_Index": 0,
+                  "value_F_Index": 0,
+                  "index_F_Size": 0,
+                  "value_F_Size": 0,
+                  "index_image_data_type": 0,
+                  "index_frame_height": 0,
+                  "value_frame_height": 0,
+                  "index_bytes_per_line": 0,
+                  "value_bytes_per_line": 0
+                },
+                "frame_attributes": {
+                  "index_first_frame ": 0
+                }
+              },
+              "rolling_buffer_attributes": {
+                "use_rolling_buffer": false,
+                "rolling_buffer_size_bytes": 0,
+                "number_of_frames_on_buffer": 0
+              }
+            }
+          },
+          "plugin": {
+            "Name": "WRITER",
+            "Version": "v4.1.0"
+          }
+        }
+      }
+    ]
+  },
+  "vehicle_params": {
+    "VEHICLE": {
+      "version": 0,
+      "Vehicle_name": "BMW-G11-730D-LBVS730",
+      "DGNSS_model": "0",
+      "attributes": {
+        "Extrinsics": {
+          "timestamp": "2025-09-17 00:00:00.000",
+          "wheelbase_mm": 3078,
+          "width_mm": 1855.972,
+          "height_mm": 1474.05,
+          "length_mm": 5041.632,
+          "rearaxis2end_mm": 1128.03,
+          "dist_rearaxle_to_ground_z_mm": 311.892
+        }
+      }
+    }
+  }
+}
