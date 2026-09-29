@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+import open3d as o3d
 from pathlib import Path
 
 class LocalDataLoader:
@@ -71,3 +72,20 @@ class LocalDataLoader:
             undistorted_img = cv2.undistort(image, K, dist_coeffs, None, new_K)
         
         return undistorted_img
+
+    def load_pointcloud(self, gs_uri: str) -> np.ndarray:
+        """Carga una nube de puntos desde disco en formato numpy Nx3."""
+        local_path = self.resolve_local_path(gs_uri)
+        
+        if not local_path.exists():
+            print(f"[WARNING] Archivo de nube de puntos no encontrado: {local_path}")
+            return np.empty((0, 3))
+
+        try:
+            pcd = o3d.io.read_point_cloud(str(local_path))
+            return np.asarray(pcd.points)
+        except Exception as e:
+            print(f"[ERROR] Fallo al leer {local_path}: {str(e)}")
+            return np.empty((0, 3))
+
+    

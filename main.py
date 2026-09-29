@@ -5,8 +5,13 @@ import numpy as np
 from pathlib import Path
 from typing import Dict, Any
 
-from src.io.parquet_reader import read_trace_parquet, read_parquet_by_path
+from src.io.parquet_reader import read_parquet_by_path
 from src.io.io_utils import LocalDataLoader
+from src.projection.project_pointcloud_auto import transform_slam_to_camera, project_points_to_image
+
+# --- CONFIGURACIÓN DE AJUSTE ---
+OFFSET_Z = 0.0
+MAX_PROJECT_DISTANCE = 40.0
 
 class CalibrationManager:
     def __init__(self, descriptor_path: str):
@@ -19,164 +24,186 @@ class CalibrationManager:
         calib_dict = {}
         sensors_data = data.get("sensors", {})
         
-        # Iterar explícitamente sobre ambas familias en el JSON
-        for family in ["AD", "SVS"]:
+        for family in ["AD", "SVS", "GTLDR"]:
             for sensor in sensors_data.get(family, []):
-                # Genera nombres como AD_FL, SVS_FV, etc.
                 sensor_name = f"{family}_{sensor['position']}" 
+                if "attributes" not in sensor or "Calibration" not in sensor["attributes"]: continue
                 
-                # Validar que los atributos existan
-                if "attributes" not in sensor or "Calibration" not in sensor["attributes"]:
-                    continue
-                    
-                intrinsics = sensor["attributes"]["Calibration"]["Intrinsics"]
-                extrinsics = sensor["attributes"]["Calibration"]["Extrinsics"]
+                calib_node = sensor["attributes"]["Calibration"]
+                extrinsics = calib_node.get("Extrinsics", {})
+                if not extrinsics or "rot_00" not in extrinsics: continue
                 
-                # Construir matriz de rotación 3x3
                 R = np.array([
                     [extrinsics["rot_00"], extrinsics["rot_01"], extrinsics["rot_02"]],
                     [extrinsics["rot_10"], extrinsics["rot_11"], extrinsics["rot_12"]],
                     [extrinsics["rot_20"], extrinsics["rot_21"], extrinsics["rot_22"]]
                 ])
-                
-                # Construir vector de traslación
                 T = np.array([extrinsics["trans_0_m"], extrinsics["trans_1_m"], extrinsics["trans_2_m"]])
                 
-                # Matriz intrínseca K
-                K = np.array([
-                    [intrinsics["fx"], 0, intrinsics["cx"]],
-                    [0, intrinsics["fy"], intrinsics["cy"]],
-                    [0, 0, 1]
-                ])
+                intrinsics = calib_node.get("Intrinsics", {})
                 
-                # Determinamos el modelo de lente asumiendo que "fisheye_k1" solo existe en lentes de ojo de pez
-                is_fisheye = "fisheye_k1" in intrinsics
+                # REPARACIÓN CRÍTICA DEL MODELO ÓPTICO
+                c1 = float(intrinsics.get("dist_c1", 0.0))
+                fish_k1 = float(intrinsics.get("fisheye_k1", 0.0))
+                
+                if abs(c1) > 1e-6:
+                    cam_type = "poly4"
+                    is_fisheye = False
+                elif abs(fish_k1) > 1e-6:
+                    cam_type = "fisheye_opencv_px"
+                    is_fisheye = True
+                else:
+                    cam_type = "perspective_opencv_px"
+                    is_fisheye = False
                 
                 calib_dict[sensor_name] = {
-                    "K": K, 
-                    "R": R, 
-                    "T": T, 
-                    "distortion": intrinsics,
-                    "is_fisheye": is_fisheye
+                    "R": R, "T": T,
+                    "type": cam_type,
+                    "is_fisheye": is_fisheye,
+                    "fx": intrinsics.get("fx", 0), "fy": intrinsics.get("fy", 0),
+                    "cx": intrinsics.get("cx", 0), "cy": intrinsics.get("cy", 0),
+                    "k1": intrinsics.get("pinhole_k1", intrinsics.get("fisheye_k1", 0)),
+                    "k2": intrinsics.get("pinhole_k2", intrinsics.get("fisheye_k2", 0)),
+                    "k3": intrinsics.get("pinhole_k3", intrinsics.get("fisheye_k3", 0)),
+                    "k4": intrinsics.get("pinhole_k4", intrinsics.get("fisheye_k4", 0)),
+                    "k5": intrinsics.get("pinhole_k5", 0), "k6": intrinsics.get("pinhole_k6", 0),
+                    "p1": intrinsics.get("pinhole_p1", 0), "p2": intrinsics.get("pinhole_p2", 0),
+                    "c1": c1, "c2": intrinsics.get("dist_c2", 0),
+                    "c3": intrinsics.get("dist_c3", 0), "c4": intrinsics.get("dist_c4", 0),
+                    "aspect_ratio": intrinsics.get("pixel_aspect_ratio_x_by_y", 1.0),
+                    "alpha": intrinsics.get("alpha", 0.0)
                 }
-
-                # print(f"Calibración cargada para {sensor_name} (Fisheye: {is_fisheye})")
-                
         return calib_dict
 
 class SensorSyncPipeline:
     def __init__(self, calib_manager: CalibrationManager):
         self.calib_manager = calib_manager
         
-    def sync_events(self, df: pd.DataFrame, tolerance_s: float = 0.05):
-        """Agrupa eventos de cámara y LiDAR basándose en la columna 'sync_timestamp'."""
-        df = df.dropna(subset=["sync_timestamp"]).sort_values(by="sync_timestamp")
-        df["time_group"] = (df["sync_timestamp"] / tolerance_s).round() * tolerance_s
-        return df.groupby("time_group")
+    def sync_events(self, df: pd.DataFrame, cam_threshold_s: float = 0.02, lidar_threshold_s: float = 0.06):
+        """ Sincronizador Time-Sync con Cámara Ancla y Nearest Neighbor. """
+        df = df.dropna(subset=["sync_timestamp"]).sort_values("sync_timestamp")
+        
+        cameras = df[df["sensor_type"] == "camera"].copy()
+        lidars = df[df["sensor_type"] == "lidar"].copy()
+        if cameras.empty: return []
+            
+        start_times = cameras.groupby("sensor_name")["sync_timestamp"].min()
+        ref_cam_name = start_times.idxmax()
+        ref_cam_events = cameras[cameras["sensor_name"] == ref_cam_name]
+        
+        matches = []
+        for _, ref_row in ref_cam_events.iterrows():
+            ref_ts = ref_row["sync_timestamp"]
+            
+            cam_diffs = (cameras["sync_timestamp"] - ref_ts).abs()
+            valid_cams = cameras[cam_diffs <= cam_threshold_s]
+            if valid_cams.empty: continue
+            
+            closest_cam_indices = valid_cams.groupby("sensor_name")["sync_timestamp"].apply(lambda x: (x - ref_ts).abs().idxmin())
+            matched_cams = valid_cams.loc[closest_cam_indices]
+            
+            lidar_diffs = (lidars["sync_timestamp"] - ref_ts).abs()
+            valid_lidars = lidars[lidar_diffs <= lidar_threshold_s]
+            matched_lidars = pd.DataFrame()
+            
+            if not valid_lidars.empty:
+                closest_lidar_indices = valid_lidars.groupby("sensor_name")["sync_timestamp"].apply(lambda x: (x - ref_ts).abs().idxmin())
+                matched_lidars = valid_lidars.loc[closest_lidar_indices]
+            
+            matches.append({
+                "timestamp": ref_ts,
+                "cameras": matched_cams,
+                "lidars": matched_lidars,
+                "odom_reference": ref_row 
+            })
+        return matches
 
-
-# Bucle de procesamiento extraído de io_utils.py a la ejecución principal
-def process_frames_locally_undistort_image(frames, calib_manager: CalibrationManager, local_base_path: str):
+def process_frames_locally(matches, calib_manager: CalibrationManager, local_base_path: str, target_lidar: str = None):
     data_loader = LocalDataLoader(local_base_path=local_base_path)
+    out_dir = Path(local_base_path) / "validation_projections"
+    out_dir.mkdir(parents=True, exist_ok=True)
     
-    for timestamp, group in frames:
+    for match in matches:
+        timestamp = match["timestamp"]
+        odom_row = match["odom_reference"]
+        
+        if pd.isna(odom_row['Translation X']) or pd.isna(odom_row['Yaw (rotation around Z)']):
+            continue
+            
+        odom_translation = np.array([odom_row['Translation X'], odom_row['Translation Y'], odom_row['Translation Z']])
+        
+        # REPARACIÓN: Secuencia ZYX de automoción (Yaw, Pitch, Roll)
+        odom_euler_zyx = np.array([
+            odom_row['Yaw (rotation around Z)'],
+            odom_row['Pitch (rotation around Y)'],
+            odom_row['Roll (rotation around X)']
+        ])
+
         print(f"\n--- Frame Sincronizado (ts: {timestamp:.3f}) ---")
         
-        cameras = group[group["sensor_type"] == "camera"]
-        lidars = group[group["sensor_type"] == "lidar"]
-        
-        # Procesar primero el LiDAR para tener la nube de puntos del frame (si existe)
-        frame_pointclouds = []
-        for _, lidar_row in lidars.iterrows():
-            lidar_path = data_loader.resolve_local_path(lidar_row["absolute_uri"])
-            # pc = load_pointcloud(lidar_path)
-            # frame_pointclouds.append(pc)
-            
-        for _, cam_row in cameras.iterrows():
+        for _, cam_row in match["cameras"].iterrows():
             cam_name = cam_row["sensor_name"]
-            uri = cam_row["absolute_uri"]
-            calib = calib_manager.calibrations.get(cam_name)
-            
-            if calib is None:
-                print(f"    [CAM] {cam_name} -> Sin calibración en JSON. Saltando.")
-                continue
+            cam_calib = calib_manager.calibrations.get(cam_name)
+            if cam_calib is None: continue
                 
-            # Cargar y rectificar la imagen directamente desde el disco
-            img = data_loader.load_and_undistort_image(uri, calib)
-            
-            if img is not None:
-                print(f"    [CAM] {cam_name} -> Imagen rectificada (Fisheye: {calib['is_fisheye']})")
-                
-                # Siguiente fase geométrica:
-                # project_lidar_to_camera(frame_pointclouds, calib["R"], calib["T"], calib["K"], img)
-            else:
-                print(f"    [WARNING] {cam_name} -> No se pudo procesar URI: {uri}")
-
-
-def process_frames_locally(frames, calib_manager: CalibrationManager, local_base_path: str):
-    data_loader = LocalDataLoader(local_base_path=local_base_path)
-    
-    for timestamp, group in frames:
-        print(f"\n--- Frame Sincronizado (ts: {timestamp:.3f}) ---")
-        
-        cameras = group[group["sensor_type"] == "camera"]
-        lidars = group[group["sensor_type"] == "lidar"]
-        
-        # 1. Cargar y acumular nubes de puntos LiDAR del frame
-        frame_pointcloud = []
-        for _, lidar_row in lidars.iterrows():
-            lidar_path = data_loader.resolve_local_path(lidar_row["absolute_uri"])
-            # Asumiendo que tienes una función para leer pcd/bin
-            # pc = load_pointcloud_data(lidar_path)  
-            # frame_pointcloud.append(pc)
-            
-        # Simulación temporal si no tienes carga de LiDAR aún:
-        # frame_pointcloud = np.random.rand(10000, 3) * 50  # Dummy Nx3
-        
-        # if len(frame_pointcloud) == 0: continue
-        # frame_pointcloud = np.vstack(frame_pointcloud)
-
-        # 2. Procesar proyecciones de cámara
-        for _, cam_row in cameras.iterrows():
-            cam_name = cam_row["sensor_name"]
-            uri = cam_row["absolute_uri"]
-            calib = calib_manager.calibrations.get(cam_name)
-            
-            if calib is None:
-                continue
-                
-            # Cargar imagen RAW (sin rectificar)
-            local_img_path = data_loader.resolve_local_path(uri)
+            local_img_path = data_loader.resolve_local_path(cam_row["absolute_uri"])
             img_raw = cv2.imread(str(local_img_path))
+            if img_raw is None: continue
+            h, w = img_raw.shape[:2]
             
-            if img_raw is not None:
-                # A. Transformar de LiDAR a Cámara
-                # points_cam = transform_lidar_to_camera(frame_pointcloud, calib["R"], calib["T"])
+            # Dinamismo de radio para paliar la escasez del teleobjetivo AD_FC
+            point_radius = 4 if cam_name == "AD_FC" else 2
+
+            for _, lidar_row in match["lidars"].iterrows():
+                lidar_name = lidar_row["sensor_name"]
+                if target_lidar is not None and lidar_name != target_lidar: continue
                 
-                # B. Proyectar a píxeles
-                # pixels_2d = project_points_to_image(points_cam, calib)
+                pc_slam = data_loader.load_pointcloud(lidar_row["absolute_uri"])
+                if pc_slam.shape[0] == 0: continue
+
+                points_cam = transform_slam_to_camera(
+                    pc_slam, odom_translation, odom_euler_zyx, 
+                    cam_calib["R"], cam_calib["T"], offset_z=OFFSET_Z
+                )
+                if len(points_cam) == 0: continue
+
+                pixels_2d = project_points_to_image(points_cam, cam_calib)
                 
-                # C. (Opcional) Filtrar píxeles fuera del tamaño de la imagen
-                # h, w = img_raw.shape[:2]
-                # valid_pixels_mask = (pixels_2d[:, 0] >= 0) & (pixels_2d[:, 0] < w) & \
-                #                     (pixels_2d[:, 1] >= 0) & (pixels_2d[:, 1] < h)
-                # valid_pixels = pixels_2d[valid_pixels_mask]
+                valid_mask = (pixels_2d[:, 0] >= 0) & (pixels_2d[:, 0] < w) & \
+                             (pixels_2d[:, 1] >= 0) & (pixels_2d[:, 1] < h)
                 
-                print(f"    [CAM] {cam_name} -> Imagen RAW cargada. Lista para proyeccion.")
+                valid_pixels = pixels_2d[valid_mask]
+                valid_depths = points_cam[valid_mask, 2]
+                
+                if len(valid_pixels) > 0:
+                    img_copy = img_raw.copy()
+                    norm_depths = np.clip(valid_depths / MAX_PROJECT_DISTANCE, 0, 1)
+                    values_array = np.uint8(255 * (1 - norm_depths))
+                    colors = cv2.applyColorMap(values_array.reshape(-1, 1), cv2.COLORMAP_JET)
+
+                    for i in range(len(valid_pixels)):
+                        u, v = int(valid_pixels[i, 0]), int(valid_pixels[i, 1])
+                        cv2.circle(img_copy, (u, v), point_radius, colors[i, 0].tolist(), -1)
+
+                    save_path = out_dir / f"{cam_name}_{lidar_name}_{timestamp:.3f}.png"
+                    img_out = cv2.resize(img_copy, (w // 2, h // 2)) if w >= 2880 else img_copy
+                    cv2.imwrite(str(save_path), img_out)
+                    print(f"    [OK] {cam_name} + {lidar_name} -> {len(valid_pixels)} ptos. Guardado.")
 
 if __name__ == "__main__":
-    # 1. Inicialización del entorno y calibraciones
     descriptor_file = "data/raw/LBVS730_20251209_153903_recording_descriptor.json"
+    parquet_path = "data/raw/trace_master_20251209_153903.parquet" 
+    
     calib_mgr = CalibrationManager(descriptor_file)
     pipeline = SensorSyncPipeline(calib_mgr)
 
-    # 2. Cargar eventos desde el Parquet
-    parquet_path = "data/raw/trace_master_20251209_153903.parquet" 
     df = read_parquet_by_path(parquet_path)
-
-    # 3. Sincronizar fotogramas
     synchronized_frames = pipeline.sync_events(df)
     
-    # 4. Procesar y visualizar/proyectar
-    # Ajusta la ruta base D:/VALEO/tmp según donde tengas montados tus datos
-    process_frames_locally(synchronized_frames, calib_mgr, local_base_path="D:/VALEO/tmp")
+    # EJECUCIÓN CON FILTRO: Solo procesará GTLDR_TC
+    process_frames_locally(
+        synchronized_frames, 
+        calib_mgr, 
+        local_base_path="D:/VALEO/tmp",
+        target_lidar=None  # "GTLDR_TC" <--- Cambia esto a None si quieres proyectar todos en el futuro
+    )

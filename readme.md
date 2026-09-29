@@ -17,7 +17,8 @@ Para un entorno profesional como Valeo, basado en Python y con integracion en la
 ### TO DO
 1. Gestión de Datos (Completado): Parser de parquet funcional y agrupación temporal basada en sync_timestamp iterando fotogramas correctamente.   
 2. Gestión de Calibración (Completado): Lectura estructurada de JSON para recuperar intrínsecas (incluyendo factores de distorsión) y matrices extrínsecas $[R\vert{}T]$.   
-3. Ingeniería Geométrica (90% Completado): Pipeline configurado para proyectar LiDAR crudo sobre imágenes crudas. Falta inyectar la carga de archivos .pcd o .bin reales.
+3. Ingeniería Geométrica (90% Completado): Pipeline configurado para proyectar LiDAR crudo sobre imágenes crudas. 
+ -> Falta inyectar la carga de archivos .pcd o .bin reales. -> vamos a cargar los scans extraidos ya.
 
 Lo que falta para lograr 3DGS:
 
@@ -25,6 +26,6 @@ Lo que falta para lograr 3DGS:
 
 2. Colorización de la Nube de Puntos (Opcional pero recomendado): Puedes usar el módulo de proyección que acabas de construir para asignar valores RGB a cada punto LiDAR válido proyectado en la cámara. Esto generará un .ply inicial altamente preciso que acelerará la convergencia de los gaussianos en el entrenamiento.
 
-3. Filtrado de Oclusiones (Hidden Point Removal): Si proyectas todo el LiDAR sobre una cámara, los puntos 3D que están detrás de objetos opacos (ej. un peatón tapando un coche) se proyectarán incorrectamente. Necesitarás implementar un z-buffer o filtrado esférico simple para evitar proyectar puntos ocluidos.
+3. Filtrado de Oclusiones (Hidden Point Removal): Si proyectas todo el LiDAR sobre una cámara, los puntos 3D que están detrás de objetos opacos (ej. un peatón tapando un coche) se proyectarán incorrectamente. Necesitarás implementar un z-buffer o filtrado esférico simple para evitar proyectar puntos ocluidos. -> Frustum Culling
 
 4. Integración con el motor 3DGS: Una vez tengas el dataset estructurado (Imágenes RAW + poses en json/colmap + ply inicial), alimentarás el repositorio estándar de 3DGS para comenzar el paso de optimización train.py.
