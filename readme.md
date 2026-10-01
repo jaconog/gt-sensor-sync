@@ -1,3 +1,28 @@
+## EXPLICACION DE LA PIPELINE
+
+Así es como fluye la información paso a paso por cada fotograma:
+1. El calib_manager (El Descriptor): Al inicio del programa, este objeto parsea todo el recording_descriptor.json. Almacena en la memoria RAM las matrices intrínsecas ($K$, distorsión) y extrínsecas ($R, T$) de todas las cámaras y LiDARs.   
+2. Los matches (El Parquet + Odometría): La función sync_events lee el Parquet y agrupa los datos. Cada match es un diccionario que contiene la clave odom_reference. Ahí viaja la odometría exacta del coche (Translation X/Y/Z y Yaw/Pitch/Roll) en ese preciso instante.   
+3. La Inyección (main.py): Cuando el bucle for itera sobre los matches, extrae la odometría (odom_translation, odom_euler_zyx) y le pide al calib_manager la calibración de la cámara (cam_calib).   
+4. El Consumo (exporter.add_frame): El main.py le pasa todos estos paquetes ya procesados al exportador mediante la función exporter.add_frame(...). Es decir, el exportador recibe los datos "masticados" y listos para operar.   
+
+# 2. El Proceso Paso a Paso del Exportador 3DGS
+Cuando llamas al modo --mode export_3dgs, la clase GaussianSplattingExporter realiza las siguientes operaciones secuenciales por debajo:   
+- Paso A: Inicialización y Conversión del PLY
+La primera vez que procesa una cámara (ej. AD_FT), crea una carpeta para ella. Como le has pasado la ruta del .pcd global acumulado del SLAM, el exportador usa la librería open3d para leer ese .pcd y lo reescribe como sparse_pc.ply dentro de la nueva carpeta.   
+- Paso B: Rectificación de la Imagen (Undistortion)
+Los motores como Nerfstudio asumen un mundo ideal donde las cámaras son Pinhole perfectas (líneas rectas). Tus cámaras reales (SVS y AD) usan lentes curvadas (poly4 o fisheye). El método _rectify_image_and_intrinsics lee la imagen RAW, aplica la matemática inversa de la distorsión, recorta los bordes negros generados y calcula una nueva matriz intrínseca K ($f_x, f_y, c_x, c_y$ recalculados para la imagen plana).   
+- Paso C: Cálculo de la Pose Global (Camera-to-World)
+Nerfstudio no sabe que existe un coche; solo entiende de "Cámaras" flotando en el "Mundo". El método _compute_c2w_matrix hace la transformación:   
+    Toma la Odometría (Vehículo $\rightarrow$ Mundo SLAM).   
+    Toma el Extrínseco de Valeo (Cámara $\rightarrow$ Vehículo).   
+    Las multiplica matricialmente para generar una única matriz 4x4 llamada $M_{c2w}$ (Camera-to-World).   
+- Paso D: Guardado Iterativo. Guarda la imagen plana en disco y guarda los parámetros en un diccionario en la memoria RAM. Al terminar todos los frames, llama a finalize_export() y escribe el JSON definitivo.
+
+
+
+
+
 ## Stack Tecnologico
 Para un entorno profesional como Valeo, basado en Python y con integracion en la nube, el stack debe priorizar el rendimiento de lectura de datos tabulares y el procesamiento geometrico:
 1. Lectura de Datos y Tablas: pandas junto con pyarrow o fastparquet para leer los archivos generados y estructurar los eventos temporalmente de forma vectorizada.
@@ -29,3 +54,16 @@ Lo que falta para lograr 3DGS:
 3. Filtrado de Oclusiones (Hidden Point Removal): Si proyectas todo el LiDAR sobre una cámara, los puntos 3D que están detrás de objetos opacos (ej. un peatón tapando un coche) se proyectarán incorrectamente. Necesitarás implementar un z-buffer o filtrado esférico simple para evitar proyectar puntos ocluidos. -> Frustum Culling
 
 4. Integración con el motor 3DGS: Una vez tengas el dataset estructurado (Imágenes RAW + poses en json/colmap + ply inicial), alimentarás el repositorio estándar de 3DGS para comenzar el paso de optimización train.py.
+
+
+
+# Google Colab (El Compute Engine):
+En Colab no vas a ejecutar tu código de orquestación. Colab se usará exclusivamente como una granja de GPUs.
+
+Subes la carpeta dataset_3dgs generada localmente a Google Drive (o la descargas directamente desde GCP en el notebook).
+
+Abres un Notebook en Colab, montas tu Google Drive.
+
+Instalas Nerfstudio en el entorno de Colab.
+
+Ejecutas el comando de entrenamiento apuntando a tus datos: ns-train splatfacto --data /content/drive/MyDrive/dataset_3dgs/AD_FT.

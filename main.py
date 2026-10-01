@@ -1,3 +1,5 @@
+import argparse
+
 import json
 import cv2
 import pandas as pd
@@ -5,10 +7,13 @@ import numpy as np
 from pathlib import Path
 from typing import Dict, Any
 
+
+
 from src.io.parquet_reader import read_parquet_by_path
 from src.io.io_utils import LocalDataLoader
 from src.projection.project_pointcloud_auto import transform_slam_to_camera, project_points_to_image
 
+from src.export.exporter_3dgs import GaussianSplattingExporter
 # --- CONFIGURACIÓN DE AJUSTE ---
 OFFSET_Z = 0.0
 MAX_PROJECT_DISTANCE = 40.0
@@ -41,6 +46,13 @@ class CalibrationManager:
                 T = np.array([extrinsics["trans_0_m"], extrinsics["trans_1_m"], extrinsics["trans_2_m"]])
                 
                 intrinsics = calib_node.get("Intrinsics", {})
+
+                # REPARACIÓN: Volver a construir la matriz K (3x3) requerida por el exportador 3DGS
+                K = np.array([
+                    [intrinsics.get("fx", 0), 0, intrinsics.get("cx", 0)],
+                    [0, intrinsics.get("fy", 0), intrinsics.get("cy", 0)],
+                    [0, 0, 1]
+                ], dtype=np.float64) if intrinsics else None
                 
                 # REPARACIÓN CRÍTICA DEL MODELO ÓPTICO
                 c1 = float(intrinsics.get("dist_c1", 0.0))
@@ -57,6 +69,7 @@ class CalibrationManager:
                     is_fisheye = False
                 
                 calib_dict[sensor_name] = {
+                    "K": K,  # <--- MATRIZ REINTEGRADA AQUÍ
                     "R": R, "T": T,
                     "type": cam_type,
                     "is_fisheye": is_fisheye,
@@ -190,20 +203,111 @@ def process_frames_locally(matches, calib_manager: CalibrationManager, local_bas
                     cv2.imwrite(str(save_path), img_out)
                     print(f"    [OK] {cam_name} + {lidar_name} -> {len(valid_pixels)} ptos. Guardado.")
 
-if __name__ == "__main__":
-    descriptor_file = "data/raw/LBVS730_20251209_153903_recording_descriptor.json"
-    parquet_path = "data/raw/trace_master_20251209_153903.parquet" 
+def export_frames_for_3dgs(matches, calib_manager: CalibrationManager, local_base_path: str, target_camera: str = None, global_pcd_path: str = None):
+    data_loader = LocalDataLoader(local_base_path=local_base_path)
     
-    calib_mgr = CalibrationManager(descriptor_file)
-    pipeline = SensorSyncPipeline(calib_mgr)
+    # --- REPARACIÓN: Cambiar output_base_dir por output_dir ---
+    exporter = GaussianSplattingExporter(output_dir=f"{local_base_path}/dataset_3dgs")
+    # -----------------------------------------------------------
+    
+    for match in matches:
+        timestamp = match["timestamp"]
+        odom_row = match["odom_reference"]
+        
+        if pd.isna(odom_row['Translation X']) or pd.isna(odom_row['Yaw (rotation around Z)']):
+            continue
+            
+        odom_translation = np.array([odom_row['Translation X'], odom_row['Translation Y'], odom_row['Translation Z']])
+        odom_euler_zyx = np.array([
+            odom_row['Yaw (rotation around Z)'],
+            odom_row['Pitch (rotation around Y)'],
+            odom_row['Roll (rotation around X)']
+        ])
 
-    df = read_parquet_by_path(parquet_path)
-    synchronized_frames = pipeline.sync_events(df)
-    
-    # EJECUCIÓN CON FILTRO: Solo procesará GTLDR_TC
-    process_frames_locally(
-        synchronized_frames, 
-        calib_mgr, 
-        local_base_path="D:/VALEO/tmp",
-        target_lidar=None  # "GTLDR_TC" <--- Cambia esto a None si quieres proyectar todos en el futuro
-    )
+        for _, cam_row in match["cameras"].iterrows():
+            cam_name = cam_row["sensor_name"]
+            
+            if target_camera and cam_name != target_camera:
+                continue
+                
+            cam_calib = calib_manager.calibrations.get(cam_name)
+            if cam_calib is None: continue
+                
+            local_img_path = data_loader.resolve_local_path(cam_row["absolute_uri"])
+            
+            exporter.add_frame(
+                cam_name=cam_name,
+                img_path=str(local_img_path),
+                timestamp=timestamp,
+                calib=cam_calib,
+                odom_trans=odom_translation,
+                odom_euler_zyx=odom_euler_zyx,
+                offset_z=OFFSET_Z,
+                global_pcd_path=global_pcd_path 
+            )
+            print(f"    [3DGS] Procesado frame {timestamp:.3f} para {cam_name}")
+            
+    exporter.finalize_export()
+
+
+
+if __name__ == "__main__":
+    if __name__ == "__main__":
+        parser = argparse.ArgumentParser(description="Valeo GT Sensor Sync & 3DGS Exporter")
+        parser.add_argument('--mode', type=str, choices=['validation', 'export_3dgs'], default='validation')
+        parser.add_argument('--cam', type=str, default=None)
+        parser.add_argument('--lidar', type=str, default=None)
+        parser.add_argument('--global_pcd', type=str, default=None, help="Ruta de la nube de puntos acumulada en formato .pcd")
+        
+        args = parser.parse_args()
+
+        descriptor_file = "data/raw/LBVS730_20251209_153903_recording_descriptor.json"
+        parquet_path = "data/raw/trace_master_20251209_153903.parquet" 
+        
+        calib_mgr = CalibrationManager(descriptor_file)
+        pipeline = SensorSyncPipeline(calib_mgr)
+
+        df = read_parquet_by_path(parquet_path)
+        synchronized_frames = pipeline.sync_events(df)
+        
+        if args.mode == 'validation':
+            print("\n=== INICIANDO PIPELINE DE VALIDACIÓN GT ===")
+            process_frames_locally(
+                synchronized_frames, 
+                calib_mgr, 
+                local_base_path="D:/VALEO/tmp",
+                target_lidar=args.lidar
+            )
+
+            # Ejemplo de ejecución del script
+            # python main.py --mode validation --cam AD_FT --lidar GTLD_TC
+
+        elif args.mode == 'export_3dgs':
+            print("\n=== INICIANDO EXPORTACIÓN 3D GAUSSIAN SPLATTING ===")
+            
+            # --- VALIDACIÓN CRÍTICA DE LA NUBE DE PUNTOS ---
+            if not args.global_pcd:
+                raise ValueError("[ERROR FATAL] Debes proporcionar la ruta a la nube de puntos con --global_pcd para el modo export_3dgs.")
+            
+            pcd_path = Path(args.global_pcd)
+            if not pcd_path.exists():
+                raise FileNotFoundError(f"[ERROR FATAL] La nube de puntos no existe en la ruta: {pcd_path}")
+            # -----------------------------------------------
+
+            export_frames_for_3dgs(
+                synchronized_frames, 
+                calib_mgr, 
+                local_base_path="D:/VALEO/tmp",
+                target_camera=args.cam,
+                global_pcd_path=str(pcd_path)
+            )
+
+            # Ejemplo de ejecución del script
+
+            # python main.py --mode export_3dgs --cam AD_FT --global_pcd "D:/VALEO/tmp/mapa_acumulado_slam.pcd"
+
+            # Entrenamiento en tu entorno de investigación
+            # ns-train splatfacto --data D:/VALEO/tmp/dataset_3dgs/AD_FT
+
+            # python main.py --mode export_3dgs --cam AD_FT --global_pcd "D:\VALEO\tmp\VALEO\data\gt-mapper-data\Answer_03\20251209_153903\trace_20251209_153903_GTLDR_TC.pcd"
+
