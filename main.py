@@ -203,11 +203,31 @@ def process_frames_locally(matches, calib_manager: CalibrationManager, local_bas
                     cv2.imwrite(str(save_path), img_out)
                     print(f"    [OK] {cam_name} + {lidar_name} -> {len(valid_pixels)} ptos. Guardado.")
 
-def export_frames_for_3dgs(matches, calib_manager: CalibrationManager, local_base_path: str, target_camera: str = None, global_pcd_path: str = None):
+def export_frames_for_3dgs(matches, calib_manager: CalibrationManager, local_base_path: str, target_camera: str = None, global_pcd_path: str = None, voxel_size: float = 0.1):
     data_loader = LocalDataLoader(local_base_path=local_base_path)
     
-    # --- REPARACIÓN: Cambiar output_base_dir por output_dir ---
-    exporter = GaussianSplattingExporter(output_dir=f"{local_base_path}/dataset_3dgs")
+    # --- CÁLCULO DEL BOUNDING BOX DE LA TRAYECTORIA ---
+    trajectory = []
+    for match in matches:
+        odom = match["odom_reference"]
+        if not pd.isna(odom['Translation X']):
+            trajectory.append([odom['Translation X'], odom['Translation Y'], odom['Translation Z']])
+    
+    bbox_min, bbox_max = None, None
+    if trajectory:
+        traj_np = np.array(trajectory, dtype=np.float64)
+        margin = 40.0  # Recortamos la nube a 40 metros alrededor de la trayectoria del coche
+        bbox_min = traj_np.min(axis=0) - margin
+        bbox_max = traj_np.max(axis=0) + margin
+        print(f"[FILTRO ESPACIAL] Bounding Box de la ruta calculado. Margen aplicado: {margin}m.")
+    
+    # --- REPARACIÓN: Pasar los límites espaciales al exportador ---
+    exporter = GaussianSplattingExporter(
+        output_dir=f"{local_base_path}/dataset_3dgs",
+        voxel_size=voxel_size,
+        bbox_min=bbox_min,
+        bbox_max=bbox_max
+    )
     # -----------------------------------------------------------
     
     for match in matches:
@@ -252,55 +272,65 @@ def export_frames_for_3dgs(matches, calib_manager: CalibrationManager, local_bas
 
 
 if __name__ == "__main__":
-    if __name__ == "__main__":
-        parser = argparse.ArgumentParser(description="Valeo GT Sensor Sync & 3DGS Exporter")
-        parser.add_argument('--mode', type=str, choices=['validation', 'export_3dgs'], default='validation')
-        parser.add_argument('--cam', type=str, default=None)
-        parser.add_argument('--lidar', type=str, default=None)
-        parser.add_argument('--global_pcd', type=str, default=None, help="Ruta de la nube de puntos acumulada en formato .pcd")
+    parser = argparse.ArgumentParser(description="Valeo GT Sensor Sync & 3DGS Exporter")
+    parser.add_argument('--mode', type=str, choices=['validation', 'export_3dgs'], default='validation')
+    parser.add_argument('--cam', type=str, default=None)
+    parser.add_argument('--lidar', type=str, default=None)
+    parser.add_argument('--global_pcd', type=str, default=None, help="Ruta de la nube de puntos acumulada en formato .pcd")
+    
+    # --- NUEVOS ARGUMENTOS DE FILTRADO TEMPORAL Y DENSIDAD ---
+    parser.add_argument('--duration', type=float, default=None, help="Segundos de escena a extraer (ej. 10.0)")
+    parser.add_argument('--start_offset', type=float, default=0.0, help="Segundos a ignorar desde el inicio (ej. 5.0)")
+    parser.add_argument('--voxel_size', type=float, default=0.1, help="Resolución en metros para aligerar la nube LiDAR (0.1 = 10cm)")
+    
+    args = parser.parse_args()
+
+    descriptor_file = "data/raw/LBVS730_20251209_153903_recording_descriptor.json"
+    parquet_path = "data/raw/trace_master_20251209_153903.parquet" 
+    
+    calib_mgr = CalibrationManager(descriptor_file)
+    pipeline = SensorSyncPipeline(calib_mgr)
+
+    df = read_parquet_by_path(parquet_path)
+
+    # --- APLICACIÓN DEL FILTRO TEMPORAL ANTES DE SINCRONIZAR ---
+    if args.duration is not None:
+        min_ts = df["sync_timestamp"].min()
+        start_ts = min_ts + args.start_offset
+        end_ts = start_ts + args.duration
+        df = df[(df["sync_timestamp"] >= start_ts) & (df["sync_timestamp"] <= end_ts)]
+        print(f"\n[FILTRO TEMPORAL] Escena acotada a {args.duration}s (Offset: {args.start_offset}s). Eventos: {len(df)}")
+    # -----------------------------------------------------------
+
+    synchronized_frames = pipeline.sync_events(df)
+    
+    if args.mode == 'validation':
+        print("\n=== INICIANDO PIPELINE DE VALIDACIÓN GT ===")
+        process_frames_locally(
+            synchronized_frames, 
+            calib_mgr, 
+            local_base_path="D:/VALEO/tmp",
+            target_lidar=args.lidar
+        )
+
+    elif args.mode == 'export_3dgs':
+        print("\n=== INICIANDO EXPORTACIÓN 3D GAUSSIAN SPLATTING ===")
         
-        args = parser.parse_args()
-
-        descriptor_file = "data/raw/LBVS730_20251209_153903_recording_descriptor.json"
-        parquet_path = "data/raw/trace_master_20251209_153903.parquet" 
+        if not args.global_pcd:
+            raise ValueError("[ERROR FATAL] Debes proporcionar la ruta a la nube de puntos con --global_pcd.")
         
-        calib_mgr = CalibrationManager(descriptor_file)
-        pipeline = SensorSyncPipeline(calib_mgr)
+        pcd_path = Path(args.global_pcd)
+        if not pcd_path.exists():
+            raise FileNotFoundError(f"[ERROR FATAL] La nube de puntos no existe: {pcd_path}")
 
-        df = read_parquet_by_path(parquet_path)
-        synchronized_frames = pipeline.sync_events(df)
-        
-        if args.mode == 'validation':
-            print("\n=== INICIANDO PIPELINE DE VALIDACIÓN GT ===")
-            process_frames_locally(
-                synchronized_frames, 
-                calib_mgr, 
-                local_base_path="D:/VALEO/tmp",
-                target_lidar=args.lidar
-            )
-
-            # Ejemplo de ejecución del script
-            # python main.py --mode validation --cam AD_FT --lidar GTLD_TC
-
-        elif args.mode == 'export_3dgs':
-            print("\n=== INICIANDO EXPORTACIÓN 3D GAUSSIAN SPLATTING ===")
-            
-            # --- VALIDACIÓN CRÍTICA DE LA NUBE DE PUNTOS ---
-            if not args.global_pcd:
-                raise ValueError("[ERROR FATAL] Debes proporcionar la ruta a la nube de puntos con --global_pcd para el modo export_3dgs.")
-            
-            pcd_path = Path(args.global_pcd)
-            if not pcd_path.exists():
-                raise FileNotFoundError(f"[ERROR FATAL] La nube de puntos no existe en la ruta: {pcd_path}")
-            # -----------------------------------------------
-
-            export_frames_for_3dgs(
-                synchronized_frames, 
-                calib_mgr, 
-                local_base_path="D:/VALEO/tmp",
-                target_camera=args.cam,
-                global_pcd_path=str(pcd_path)
-            )
+        export_frames_for_3dgs(
+            synchronized_frames, 
+            calib_mgr, 
+            local_base_path="D:/VALEO/tmp",
+            target_camera=args.cam,
+            global_pcd_path=str(pcd_path),
+            voxel_size=args.voxel_size
+        )
 
             # Ejemplo de ejecución del script
 
@@ -310,4 +340,6 @@ if __name__ == "__main__":
             # ns-train splatfacto --data D:/VALEO/tmp/dataset_3dgs/AD_FT
 
             # python main.py --mode export_3dgs --cam AD_FT --global_pcd "D:\VALEO\tmp\VALEO\data\gt-mapper-data\Answer_03\20251209_153903\trace_20251209_153903_GTLDR_TC.pcd"
+
+            #python main.py --mode export_3dgs --global_pcd "D:\VALEO\tmp\VALEO\data\gt-mapper-data\Answer_03\20251209_153903\trace_20251209_153903_GTLDR_TC.pcd" --duration 10.0 --start_offset 5.0
 

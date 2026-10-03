@@ -18,8 +18,7 @@ para obtener una única matriz 4x4 de "Cámara a Mundo".
 """
 
 class GaussianSplattingExporter:
-    def __init__(self, output_dir: str):
-        # Ahora creamos una única carpeta de dataset maestro
+    def __init__(self, output_dir: str, voxel_size: float = 0.1, bbox_min=None, bbox_max=None):
         self.output_dir = Path(output_dir)
         self.img_dir = self.output_dir / "images"
         self.img_dir.mkdir(parents=True, exist_ok=True)
@@ -27,40 +26,51 @@ class GaussianSplattingExporter:
         self.frames = []
         self.global_ply_path = ""
         self._pcd_converted = False
+        
+        # Atributos de protección de memoria RAM/VRAM
+        self.voxel_size = voxel_size
+        self.bbox_min = bbox_min
+        self.bbox_max = bbox_max
 
     def convert_pcd_to_ply(self, pcd_path: str):
-        """Convierte el PCD a PLY y lo guarda estructurado para máxima compatibilidad con Nerfstudio."""
+        """Convierte, recorta espacialmente y filtra la densidad del PCD."""
         if self._pcd_converted:
             return
             
         try:
             pcd = o3d.io.read_point_cloud(pcd_path)
-            
-            # Validación de integridad de la nube
             if len(pcd.points) == 0:
-                print(f"[ERROR CRÍTICO] La nube de puntos {pcd_path} se ha leído, pero tiene 0 puntos.")
+                print(f"[ERROR CRÍTICO] La nube de puntos {pcd_path} tiene 0 puntos.")
                 return
             
-            # REPARACIÓN: Crear estructura estándar estilo COLMAP requerida nativamente por Splatfacto
+            print(f"\n[3DGS EXPORT] Nube original procesada: {len(pcd.points):,} puntos.")
+            
+            # 1. RECORTAR ESPACIALMENTE (Bounding Box dinámico de la trayectoria)
+            if self.bbox_min is not None and self.bbox_max is not None:
+                bbox = o3d.geometry.AxisAlignedBoundingBox(min_bound=self.bbox_min, max_bound=self.bbox_max)
+                pcd = pcd.crop(bbox)
+                print(f"[3DGS EXPORT] Puntos tras recorte de trayectoria (+40m margen): {len(pcd.points):,}")
+            
+            # 2. ALIGERAR DENSIDAD (Voxel Downsample para salvar VRAM)
+            if self.voxel_size > 0.0:
+                pcd = pcd.voxel_down_sample(voxel_size=self.voxel_size)
+                print(f"[3DGS EXPORT] Puntos tras Voxel Downsample ({self.voxel_size}m): {len(pcd.points):,}")
+            
             sparse_dir = self.output_dir / "sparse" / "0"
             sparse_dir.mkdir(parents=True, exist_ok=True)
-            
-            # El archivo debe llamarse convencionalmente points3D.ply
             ply_filename = "sparse/0/points3D.ply"
             ply_path = self.output_dir / ply_filename
             
-            # Guardamos como ASCII False (Binario) para optimizar el tamaño y la carga
             o3d.io.write_point_cloud(str(ply_path), pcd, write_ascii=False)
             
-            # Nerfstudio leerá esta ruta relativa desde donde esté el transforms.json
             self.global_ply_path = ply_filename
             self._pcd_converted = True
-            print(f"[3DGS EXPORT] Convertido PCD global a PLY en: {ply_path}")
-            print(f"[3DGS EXPORT] Puntos totales inyectados en inicialización: {len(pcd.points)}")
+            print(f"[3DGS EXPORT] Nube lista para Nerfstudio guardada en: {ply_path}\n")
             
         except Exception as e:
             print(f"[ERROR FATAL] Falla estructural al convertir PCD a PLY: {e}")
 
+            
     def _process_image_and_intrinsics(self, img_raw: np.ndarray, calib: dict) -> tuple:
         h, w = img_raw.shape[:2]
         K = calib["K"]
